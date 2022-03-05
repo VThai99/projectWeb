@@ -14,29 +14,7 @@ export default function Homepage() {
       <div className="mt-5">
         <BannerHomeTwo />
       </div>
-      <div className="mt-5">
-        <div className="image_h700 relative">
-          <Image src={Banner} alt="banner" />
-          <div className="banner_text">
-            <div className="caption_text"></div>
-            <div className="caption_text">
-              <h4 className="font-16 text-b500 uppercase">
-                ALL NEW TREND TABLETS
-              </h4>
-              <h3 className="font-md-60 font-25 font-semibold  my-4">
-                Top rated tablets!
-              </h3>
-              <p>Doing it all, in all new ways.</p>
-              <Button
-                variant="b500"
-                className="btn-square btw-154 font-11 font-semibold mt-2"
-              >
-                SHOP NOW
-              </Button>{" "}
-            </div>
-          </div>
-        </div>
-      </div>
+    
       <div className="mt-5">
         <BestSeller />
       </div>

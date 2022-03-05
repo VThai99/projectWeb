@@ -1,3 +1,5 @@
+/** @format */
+
 header {
   background: #fff;
   position: relative;
@@ -6,8 +8,8 @@ header {
 }
 .header_logo {
   img {
-    width: 130px;
-    height: 30px;
+    width: 103px;
+    height: 69px;
   }
 }
 .header_row_1 {
@@ -22,8 +24,8 @@ header {
 .header_row_2 {
   padding: 0;
   color: #6c6d73;
-  background: #f2f4ff;
-  height: 45px;
+  background: #fff;
+  height: 69px;
 }
 .header_item_right {
   padding-top: 2px;
@@ -34,14 +36,16 @@ header {
   display: inline-block;
   vertical-align: middle;
   margin: 0 15px 0 0;
-  font-size: 14px;
+  font-size: 20px;
   color: $g400;
   font-weight: 500;
   &.active {
     padding: 12px;
   }
 }
+
 .nav-item {
+  margin-left: 20px;
   display: flex;
   align-items: center;
 }
@@ -50,5 +54,5 @@ header {
   vertical-align: middle;
   margin: 0 15px 0 0;
   color: $g600;
-  font-size: 16px;
+  font-size: 20px;
 }
