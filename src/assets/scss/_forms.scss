@@ -1,0 +1,85 @@
+.form-control {
+  color: $g400 !important;
+  &:focus {
+    border: 1px solid #c8c9c7;
+  }
+}
+input {
+  outline: none;
+}
+.ipw-386 {
+  @include input-width(386);
+}
+
+.ipw-488 {
+  @include input-width(488);
+}
+.ipw-448 {
+  @include input-width(448);
+}
+.ipw-354 {
+  @include input-width(354);
+}
+.ipw-349 {
+  @include input-width(328);
+}
+.ipw-328 {
+  @include input-width(328);
+}
+.ipw-300 {
+  @include input-width(300);
+}
+
+.ipw-285 {
+  @include input-width(285);
+}
+.ipw-255 {
+  @include input-width(255);
+}
+
+.ipw-246 {
+  @include input-width(246);
+}
+
+.ipw-240 {
+  @include input-width(240);
+}
+
+.ipw-220 {
+  @include input-width(220);
+}
+
+.ipw-184 {
+  @include input-width(184);
+}
+.ipw-178 {
+  @include input-width(178);
+}
+.ipw-152 {
+  @include input-width(152);
+}
+
+.ipw-130 {
+  @include input-width(130);
+}
+.ipw-120 {
+  @include input-width(120);
+}
+.ipw-100 {
+  @include input-width(100);
+}
+.ipw-74 {
+  width: 74px;
+  height: 40px;
+
+  @include media-breakpoint-down(lg) {
+    width: 74px !important;
+    height: 40px !important;
+  }
+}
+.height-44 {
+  height: 44px;
+}
+.height-42 {
+  height: 42px;
+}

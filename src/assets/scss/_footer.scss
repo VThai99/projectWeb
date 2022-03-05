@@ -1,0 +1,31 @@
+footer {
+  li {
+    cursor: pointer;
+    &:hover {
+      color: #485ad7;
+    }
+  }
+}
+.footer_newsletter_caption {
+  padding: 39px 0 35px;
+  background-color: #c8e4ff;
+}
+.newsletter {
+  .text {
+    margin: 19px 0 13px;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+    max-width: 75%;
+    color: $g600;
+  }
+}
+.footer_main {
+  text-align: center;
+  padding: 31px 20px 10px;
+  background: $g300;
+  color: #fff;
+}
+.footer_payments {
+  width: 29px;
+  height: 18px;
+}

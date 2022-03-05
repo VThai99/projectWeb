@@ -1,0 +1,119 @@
+// New variable
+
+$g800: #0b0b0a;
+$g700: #41444c;
+$g600: #6c6d73;
+$g500: #797b81;
+$g400: #3c3c5b;
+$g300: #1a1c28;
+$g200: #99a2aa;
+$g150: #edfafa;
+$g100: #444b52;
+$g50: #f8f9fa;
+$g10: #dee2e6;
+
+$b600: #1c4da1;
+$b500: #485ad7;
+$b450: #2f80ed;
+$b550: #1d84cf;
+$b400: #318ee5;
+$b300: #4faaf5;
+$b200: #95cdf9;
+$b100: #e4f3fd;
+$b50: #f3faff;
+
+$m600: #47b8c2;
+$m500: #00abbe;
+$m400: #3bc9d8;
+$m300: #80dee7;
+$m200: #b2ebf1;
+$m100: #e0f7f9;
+$m50: #f7feff;
+$m450: #0095a4;
+
+$p600: #542e91;
+$p500: #5929af;
+$p400: #8451d7;
+$p200: #d4c3f0;
+$p100: #efe7f9;
+$p50: #f9f4ff;
+
+$r600: #ea4335;
+$r500: #f93463;
+$r200: #cb1c22;
+$r100: #fcfbfb;
+$r300: #e60023;
+
+$y600: #ffb802;
+$y500: #ea9d02;
+
+$gr600: #45b035;
+// Variable overrides Bootstrap
+// $body-color: $g500;
+$font-family-base: "Prompt", sans-serif;
+$line-height-base: 1.5;
+$headings-font-weight: 700;
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 800px,
+//   xl: 800px,
+// );
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1300px,
+// );
+
+$primary: $b500;
+$danger: #f21558;
+$border-color: $g300;
+$link-hover-color: $b500;
+$link-hover-decoration: none;
+$input-border-color: $g200;
+$input-border-radius: 3px;
+$input-placeholder-color: $g300;
+$input-height: 56px;
+$input-height-sm: 44px;
+$input-focus-box-shadow: none;
+$input-focus-border-color: $g500;
+
+$btn-font-size: 18px;
+$btn-font-size-sm: 14px;
+$btn-font-weight: 500;
+$btn-border-width: 1px;
+$btn-focus-box-shadow: none;
+$btn-box-shadow: none;
+$btn-active-box-shadow: none;
+$btn-border-radius: 100px;
+$btn-border-radius-sm: 100px;
+$btn-line-height: 54px;
+$btn-line-height-sm: 42px;
+$btn-padding-y: 0;
+$btn-padding-y-sm: 0;
+
+$form-check-input-gutter: 0;
+$form-check-input-margin-y: 7px;
+
+$modal-content-border-width: 0;
+$modal-header-border-width: 0;
+$modal-footer-border-width: 0;
+$modal-content-inner-border-radius: 5px;
+$modal-content-border-radius: 5px;
+$modal-header-padding: 0;
+$modal-title-line-height: 44px;
+
+// $nav-tabs-link-active-color: $b500;
+$nav-tabs-border-radius: 0;
+$nav-link-padding-y: 0;
+$nav-link-padding-x: 0;
+
+$pagination-color: $g500;
+$pagination-border-color: $g200;
+$pagination-active-color: #000;
+$pagination-active-bg: $g100;
+$pagination-focus-box-shadow: none;
+$pagination-hover-color: $g500;
+$pagination-hover-bg: $g100;

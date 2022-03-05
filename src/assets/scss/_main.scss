@@ -1,0 +1,40 @@
+body {
+  color: $black;
+  font-family: $font-family-base;
+  font-size: 16px;
+  word-wrap: break-word;
+  overflow-x: hidden !important;
+}
+.container {
+  max-width: 1200px;
+}
+.BestSeller .slick-dots li button:before {
+  font-size: 10px;
+}
+.BestSeller .slick-dots li.slick-active button:before {
+  font-size: 14px;
+  color: $b600;
+  opacity: 1;
+}
+.shopmobile-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.background-red {
+  background-color: red;
+  color: #fff !important;
+}
+.background-black {
+  background-color: black;
+  color: #fff !important;
+}
+.background-yellow {
+  background-color: yellow;
+  color: #fff !important;
+}
+.background-blue {
+  background-color: blue;
+  color: #fff !important;
+}

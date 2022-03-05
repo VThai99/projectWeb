@@ -1,0 +1,162 @@
+.btn {
+  height: 44px;
+  line-height: 42px;
+  white-space: nowrap;
+  padding: 0;
+  &:active,
+  &:focus,
+  &.focus {
+    box-shadow: none;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+.btn-xs {
+  height: 32px;
+  line-height: 30px;
+  font-size: 14px;
+}
+.btw-386 {
+  @include button-width(386);
+}
+.btw-372 {
+  @include button-width(372);
+}
+.btw-320 {
+  @include button-width(320);
+}
+.btw-328 {
+  @include button-width(328);
+}
+.btw-314 {
+  @include button-width(314);
+}
+.btw-290 {
+  @include button-width(290);
+}
+.btw-260 {
+  @include button-width(260);
+}
+.btw-250 {
+  @include button-width(250);
+}
+.btw-224 {
+  @include button-width(224);
+}
+.btw-210 {
+  @include button-width(210);
+}
+.btw-184 {
+  @include button-width(184);
+}
+.btw-168 {
+  @include button-width(168);
+}
+.btw-158 {
+  @include button-width(158);
+}
+.btw-154 {
+  @include button-width(154);
+}
+.btw-140 {
+  @include button-width(140);
+}
+.btw-130 {
+  @include button-width(130);
+}
+.btw-120 {
+  @include button-width(120);
+}
+.btw-100 {
+  @include button-width(100);
+}
+.btw-65 {
+  width: 65px;
+  height: 44px;
+  line-height: 44px;
+}
+.btw-65-answer {
+  width: auto;
+  height: auto;
+  padding: 0;
+}
+.btw-46 {
+  width: 46px;
+  height: 46px;
+  line-height: 44px;
+}
+.btw-314-mobile {
+  @include button-width(314);
+  @include media-breakpoint-down(sm) {
+    width: 202px;
+  }
+}
+.btn-square {
+  @include border-radius(3px);
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+.btn-b500 {
+  border-color: $b500;
+  background-color: $b500;
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+.btn-g300 {
+  border-color: $g300;
+  background-color: $g300;
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+.btn-g100 {
+  border-color: $g100;
+  background-color: $g100;
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+.btn-r200 {
+  border-color: $r200;
+  background-color: $r200;
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+.btn-buy-now {
+  height: auto;
+  line-height: 10px;
+  padding: 10px 32px;
+}
+
+.btn-link {
+  border-color: transparent;
+  background-color: transparent;
+  color: blue;
+  &:hover {
+    color: #000;
+  }
+}
+.btn-border-g100 {
+  border-color: $g100;
+  color: #000;
+  &:hover {
+    color: #000;
+  }
+}
+.btn-submitorder {
+  background: linear-gradient(180deg, #f79429, #f7712e);
+  color: #fff;
+}

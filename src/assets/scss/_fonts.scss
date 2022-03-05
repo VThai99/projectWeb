@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700&display=swap");
+
+.font-base {
+  font-family: $font-family-base;
+}
+.font-10 {
+  font-size: 10px;
+}
+.font-11 {
+  font-size: 11px;
+}
+.font-12 {
+  font-size: 12px;
+}
+.font-13 {
+  font-size: 13px;
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-15 {
+  font-size: 15px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.font-17 {
+  font-size: 17px;
+}
+.font-18 {
+  font-size: 18px;
+}
+.font-19 {
+  font-size: 19px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.font-22 {
+  font-size: 22px;
+}
+.font-23 {
+  font-size: 23px;
+}
+.font-24 {
+  font-size: 24px;
+}
+.font-25 {
+  font-size: 25px;
+}
+.font-26 {
+  font-size: 26px;
+}
+.font-28 {
+  font-size: 28px;
+}
+.font-29 {
+  font-size: 29px;
+}
+.font-30 {
+  font-size: 30px;
+}
+.font-32 {
+  font-size: 32px;
+}
+.font-40 {
+  font-size: 40px;
+}
+
+.font-md-42 {
+  font-size: 42px;
+}
+
+.text-b500 {
+  color: $b500;
+}
+.text-g600 {
+  color: $g600;
+}
+.text-g200 {
+  color: $g200;
+}
+.text-g100 {
+  color: $g100;
+}
+.text-r300 {
+  color: $r300;
+}
+
+.font-lg-60 {
+  @media (min-width: 1024px) {
+    font-size: 60px;
+  }
+}
+.form-control {
+  font-size: 14px;
+  height: 42px;
+}
+.textarea-comment {
+  padding-right: 150px;
+}

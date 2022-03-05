@@ -1,0 +1,34 @@
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.image_h700 {
+  height: 700px;
+  @media (max-width: 768px) {
+    height: 100%;
+  }
+}
+.image_h375 {
+  height: 375px;
+  @media (max-width: 768px) {
+    height: 100%;
+  }
+}
+.image_3_2 {
+  background-color: $g200;
+  position: relative;
+  width: 100%;
+  padding-top: 66.66%; /* 3:2 Aspect Ratio */
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  @include media-breakpoint-down(md) {
+    height: 100%;
+  }
+}
