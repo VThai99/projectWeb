@@ -23,7 +23,7 @@ for (let number = 1; number <= 5; number++) {
     </Pagination.Item>
   );
 }
-export default function Clock() {
+export default function Author() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -35,7 +35,7 @@ export default function Clock() {
           <Breadcrumb>
             <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
 
-            <Breadcrumb.Item active>Đồng hồ thông minh</Breadcrumb.Item>
+            <Breadcrumb.Item active>Tác giải</Breadcrumb.Item>
           </Breadcrumb>
 
           <div className="mt-5">

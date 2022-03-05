@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import { Card, Button, Modal, Image } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
@@ -20,15 +22,14 @@ export default function BestSeller() {
     <div className="BestSeller">
       <div className="container_big">
         <div>
-          <h3 className="font-30 text-b500 text-center my-5">
-            {" "}
-            Shop Best Sellers{" "}
+          <h3 className="font-30 text-b500 text-start ml-2 my-5">
+            O Sách mới nhất
           </h3>
-          <Slider {...settings}>
+          <div className=" container grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <Card className="card-product">
                 <NavLink to="/product-detail">
-                  <Card.Img variant="top" src={Banner} />
+                  <Card.Img variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
                   <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -47,7 +48,7 @@ export default function BestSeller() {
             <div>
               <Card className="card-product">
                 <NavLink to="/product-detail">
-                  <Card.Img variant="top" src={Banner} />
+                  <Card.Img variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
                   <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -66,7 +67,7 @@ export default function BestSeller() {
             <div>
               <Card className="card-product">
                 <NavLink to="/product-detail">
-                  <Card.Img variant="top" src={Banner} />
+                  <Card.Img variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
                   <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -85,7 +86,7 @@ export default function BestSeller() {
             <div>
               <Card className="card-product">
                 <NavLink to="/product-detail">
-                  <Card.Img variant="top" src={Banner} />
+                  <Card.Img variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
                   <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -104,7 +105,7 @@ export default function BestSeller() {
             <div>
               <Card className="card-product">
                 <NavLink to="/product-detail">
-                  <Card.Img variant="top" src={Banner} />
+                  <Card.Img variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
                   <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -123,7 +124,7 @@ export default function BestSeller() {
             <div>
               <Card className="card-product">
                 <NavLink to="/product-detail">
-                  <Card.Img variant="top" src={Banner} />
+                  <Card.Img variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
                   <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -139,7 +140,64 @@ export default function BestSeller() {
                 </Card.Body>
               </Card>
             </div>
-          </Slider>
+            <div>
+              <Card className="card-product">
+                <NavLink to="/product-detail">
+                  <Card.Img variant="top" src={Banner} />{" "}
+                </NavLink>
+                <div className="product_links__subbutton" onClick={handleShow}>
+                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                </div>
+                <Card.Body className="card-product-body">
+                  <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
+                  <p className="font-22 text-b500 font-medium">
+                    $175.00 - $175.00
+                  </p>
+                  <Button variant="b500" className="btw-130 btn-square font-11">
+                    ADD TO CART
+                  </Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div>
+              <Card className="card-product">
+                <NavLink to="/product-detail">
+                  <Card.Img variant="top" src={Banner} />{" "}
+                </NavLink>
+                <div className="product_links__subbutton" onClick={handleShow}>
+                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                </div>
+                <Card.Body className="card-product-body">
+                  <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
+                  <p className="font-22 text-b500 font-medium">
+                    $175.00 - $175.00
+                  </p>
+                  <Button variant="b500" className="btw-130 btn-square font-11">
+                    ADD TO CART
+                  </Button>
+                </Card.Body>
+              </Card>
+            </div>
+            <div>
+              <Card className="card-product">
+                <NavLink to="/product-detail">
+                  <Card.Img variant="top" src={Banner} />{" "}
+                </NavLink>
+                <div className="product_links__subbutton" onClick={handleShow}>
+                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                </div>
+                <Card.Body className="card-product-body">
+                  <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
+                  <p className="font-22 text-b500 font-medium">
+                    $175.00 - $175.00
+                  </p>
+                  <Button variant="b500" className="btw-130 btn-square font-11" >
+                    ADD TO CART
+                  </Button>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
       <Modal

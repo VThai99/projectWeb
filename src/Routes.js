@@ -7,10 +7,10 @@ import OrderSuccess from "./assets/components/OrderSuccess";
 import Accessory from "./assets/pages/Accessory";
 import Cart from "./assets/pages/Cart";
 import Catalog from "./assets/pages/Catalog";
-import Clock from "./assets/pages/Clock";
+import Clock from "./assets/pages/Author";
 import ContactUs from "./assets/pages/ContactUs";
 import Homepage from "./assets/pages/Homepage";
-import Laptop from "./assets/pages/Laptop";
+import Category from "./assets/pages/Category";
 import Privacy from "./assets/pages/Privacy";
 export default function Routes() {
   return (
@@ -22,11 +22,11 @@ export default function Routes() {
         <Route path="/accessory">
           <Accessory />
         </Route>
-        <Route path="/Clock">
+        <Route path="/Author">
           <Clock />
         </Route>
-        <Route path="/laptop">
-          <Laptop />
+        <Route path="/Category">
+          <Category />
         </Route>
         <Route path="/cart">
           <Cart />

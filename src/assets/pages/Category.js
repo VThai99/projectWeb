@@ -23,7 +23,7 @@ for (let number = 1; number <= 5; number++) {
     </Pagination.Item>
   );
 }
-export default function Laptop() {
+export default function Category() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -35,7 +35,7 @@ export default function Laptop() {
           <Breadcrumb>
             <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
 
-            <Breadcrumb.Item active>Laptop</Breadcrumb.Item>
+            <Breadcrumb.Item active>Category</Breadcrumb.Item>
           </Breadcrumb>
 
           <div className="mt-5">
