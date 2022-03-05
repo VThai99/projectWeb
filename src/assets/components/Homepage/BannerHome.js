@@ -4,7 +4,7 @@ import Banner from "../../Images/banner_1.png";
 export default function BannerHome() {
   return (
     <div>
-      {/* <div className="image_h700 relative">
+      <div className="image_h700 relative">
         <Image src={Banner} alt="banner" />
         <div className="banner_text">
           <div className="caption_text">
@@ -29,7 +29,7 @@ export default function BannerHome() {
             </h3>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 }

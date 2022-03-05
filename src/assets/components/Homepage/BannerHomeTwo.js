@@ -1,7 +1,9 @@
+/** @format */
+
 import React from "react";
 import { Button, Image } from "react-bootstrap";
-import Banner from "../../Images/banner2.jpg";
-import Banner3 from "../../Images/banner3.jpg";
+import Banner from "../../Images/Banner3.jpeg";
+import Banner3 from "../../Images/Banner5.jpeg";
 export default function BannerHomeTwo() {
   return (
     <div>
@@ -14,12 +16,6 @@ export default function BannerHomeTwo() {
                 <div className="caption_text_1">
                   <h3 className="font-md-42 font-22">Sách hay mỗi ngày</h3>
                   <p className="text-g600">Mua đi còn chần trừ gì nữa!</p>
-                  <Button
-                    variant="b500"
-                    className="btn-square btw-46 font-20 font-semibold mt-2"
-                  >
-                  <strong>+</strong> 
-                  </Button>
                 </div>
               </div>
             </div>
@@ -33,7 +29,9 @@ export default function BannerHomeTwo() {
                   <h3 className="font-md-60 font-22 text-white uppercase">
                     BIG SALE **
                   </h3>
-                  <p className="font-18 text-white">Mua ngay những quyển sách giá trị cho mình và bạn bè!</p>
+                  <p className="font-18 text-white">
+                    Mua ngay những quyển sách giá trị cho mình và bạn bè!
+                  </p>
                 </div>
               </div>
             </div>
@@ -45,12 +43,6 @@ export default function BannerHomeTwo() {
                 <div className="caption_text_1">
                   <h3 className="font-md-42 font-22">Ngày hội sách </h3>
                   <p className="text-g600">Số lượng có hạn!</p>
-                  <Button
-                    variant="b500"
-                    className="btn-square btw-46 font-20 font-semibold mt-2"
-                  >
-                  <strong>+</strong> 
-                  </Button>
                 </div>
               </div>
             </div>

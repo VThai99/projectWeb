@@ -32,7 +32,7 @@ export default function Header() {
                   <Link to="/Category">Thể Loại</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/Author">Author</Link>
+                  <Link to="/Author">Tác giả</Link>
                 </Nav.Item>
               </Nav>
             </div>
