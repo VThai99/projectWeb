@@ -7,56 +7,18 @@ import {
   FloatingLabel,
   Form,
   Image,
-  ProgressBar,
-  Table,
-  ToggleButton,
-  ToggleButtonGroup,
 } from "react-bootstrap";
-import ReactRating from "react-rating";
+
 import ReactReadMoreReadLess from "react-read-more-read-less";
 import { useHistory } from "react-router";
-import Slider from "react-slick";
+
 import Banner from "../Images/Banner3.jpeg";
-import Banner6 from "../Images/ip13blue.jpg";
-import Product1 from "../Images/product1.jpg";
-import Product2 from "../Images/product2.jpg";
-import Product3 from "../Images/product3.jpg";
 export default function ProductDetail() {
-  const [colorActive, setColorActive] = useState(null);
   const history = useHistory();
   const Cart = () => {
     history.push("/cart");
   };
-  // const SVGIcon = (props) => (
-  //   <svg className={props.className} pointerEvents="none">
-  //     <use xlinkHref={props.href} />
-  //   </svg>
-  // );
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-  const settingsProduct = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-  };
-  function handleStart(e) {
-    console.log(e);
-  }
-  const colorArr = [
-    { name: "Red", classActive: "background-red" },
-    { name: "Yellow", classActive: "background-yellow" },
-    { name: "Blue", classActive: "background-blue" },
-    { name: "Black", classActive: "background-black" },
-  ];
+
   return (
     <div>
       <div className="product-detail-page">
@@ -157,9 +119,7 @@ export default function ProductDetail() {
             </div>
           </div>
           <div className="box-answer-comment mt-5">
-            <p className="font-20 font-medium">
-              Hỏi & Đáp về sản phẩm
-            </p>
+            <p className="font-20 font-medium">Hỏi & Đáp về sản phẩm</p>
             <>
               <FloatingLabel controlId="floatingTextarea" className="relative">
                 <Form.Control

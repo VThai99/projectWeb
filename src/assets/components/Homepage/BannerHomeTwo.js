@@ -13,7 +13,7 @@ export default function BannerHomeTwo() {
         </h3>
         <div className="row">
           <div className="col-4">
-            <div className="image_h700 relative">
+            <div className="ml-1 image_h700 relative">
               <Image src={Banner} alt="banner" />
               <div className="banner_text_left">
                 <div className="caption_text_1">

@@ -1,21 +1,14 @@
 /** @format */
 
-// img {
-//   object-fit: cover;
-//   width: 360px;
-//  // height: 530px;
-//   box-shadow: 3px 3px 3px 0 #dee2e6;
-// }
-// img {
-//   object-fit: cover;
-//   width: 360px;
-//  // height: 530px;
-//   box-shadow: 3px 3px 3px 0 #dee2e6;
-// }
 .image_h700 {
-  height: 700px;
+  height: 500px;
   @media (max-width: 768px) {
     height: 100%;
+  }
+  img {
+    object-fit: cover;
+    width: 530px;
+    height: 530px !important;
   }
 }
 .image_h375 {

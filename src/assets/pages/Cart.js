@@ -1,7 +1,9 @@
+/** @format */
+
 import React, { useState } from "react";
 import { Button, Form, Image, Tab, Tabs } from "react-bootstrap";
 import { useHistory } from "react-router";
-import Banner from "../Images/banner2.jpg";
+import Banner from "../Images/Banner1.jpeg";
 
 export default function Cart() {
   const history = useHistory();
@@ -22,16 +24,11 @@ export default function Cart() {
             </div>
             <div className="col-span-9 md:col-span-10">
               <div className="flex justify-between items-center">
-                <h4 className="font-14 font-medium m-0">
-                  Điện thoại Samsung Galaxy Z Flip3 5G 256GB
-                </h4>
-                <p className="font-14 text-r300 m-0">26.990.000đ</p>
+                <h4 className="font-14 font-medium m-0">Sách 7 love</h4>
+                <p className="font-14 text-r300 m-0">26.000đ</p>
               </div>
-              <p className="font-12 text-blue-500">9 mã khuyến mại</p>
-              <div className="discountpromotion">
-                Giảm <span className="font-14 text-r300">1.000.000đ</span> còn{" "}
-                <span className="font-14 text-r300">25.990.000đ</span>
-              </div>
+              {/* <p className="font-12 text-blue-500">9 mã khuyến mại</p> */}
+
               <div className="flex justify-between my-3">
                 <Form.Select size="sm">
                   <option>Màu Đen</option>
@@ -60,9 +57,9 @@ export default function Cart() {
               </div>
             </div>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between mt-5">
             <p className="font-14">Tạm tính (1 sản phẩm):</p>
-            <p className="font-14 text-r300 p-0">26.990.000đ</p>
+            <p className="font-14 text-r300 p-0">26 .000đ</p>
           </div>
         </div>
         <div className="box-cart-detail ">
@@ -144,14 +141,14 @@ export default function Cart() {
                   </Form>
                 </div>
               </Tab>
-              <Tab eventKey="profile" title="Nhận tại siêu thị">
+              <Tab eventKey="profile" title="Nhận tại cửa hàng">
                 <div className="box-choose-content">
                   <Form>
                     {["radio"].map((type) => (
                       <div key={`inline-${type}`}>
                         <Form.Check
                           inline
-                          label="Cơ Sở: 19 Lê Văn Lương, Thanh Xuân, Hà Nội"
+                          label="Địa chỉ: 341 phố Vọng - Hai Bà Trưng- Hà Nội"
                           name="group1"
                           type={type}
                           // id={`inline-${type}-1`}
@@ -173,7 +170,7 @@ export default function Cart() {
           <div className="tab-choose mt-4">
             <div className="flex justify-between">
               <p className="font-16 font-semibold m-0">Tổng tiền:</p>
-              <p className="font-14 text-r300 m-0">26.990.000đ</p>
+              <p className="font-14 text-r300 m-0">26.000đ</p>
             </div>
             <Button
               variant="submitorder"

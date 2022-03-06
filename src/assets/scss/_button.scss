@@ -137,6 +137,14 @@
     color: #fff;
   }
 }
+.btn-r600 {
+  border-color: $r600;
+  background-color: $r600;
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
 .btn-r200 {
   border-color: $r200;
   background-color: $r200;
