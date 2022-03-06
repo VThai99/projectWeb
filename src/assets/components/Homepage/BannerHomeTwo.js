@@ -12,13 +12,13 @@ export default function BannerHomeTwo() {
               <Image src={Banner} alt="banner" />
               <div className="banner_text_left">
                 <div className="caption_text_1">
-                  <h3 className="font-md-42 font-22">Mac Desktops</h3>
-                  <p className="text-g600">Quality products!</p>
+                  <h3 className="font-md-42 font-22">Sách hay mỗi ngày</h3>
+                  <p className="text-g600">Mua đi còn chần trừ gì nữa!</p>
                   <Button
                     variant="b500"
                     className="btn-square btw-46 font-20 font-semibold mt-2"
                   >
-                    &#10152;
+                  <strong>+</strong> 
                   </Button>
                 </div>
               </div>
@@ -29,11 +29,11 @@ export default function BannerHomeTwo() {
               <Image src={Banner3} alt="banner" className="relative" />
               <div className="banner_text_center">
                 <div className="text-center">
-                  <h4 className="font-22 text-white">Up to 30%</h4>
+                  <h4 className="font-22 text-white">Giảm giá Up to 59%</h4>
                   <h3 className="font-md-60 font-22 text-white uppercase">
-                    BIG SALE
+                    BIG SALE **
                   </h3>
-                  <p className="font-18 text-white">Get new smartphone!</p>
+                  <p className="font-18 text-white">Mua ngay những quyển sách giá trị cho mình và bạn bè!</p>
                 </div>
               </div>
             </div>
@@ -43,13 +43,13 @@ export default function BannerHomeTwo() {
               <Image src={Banner} alt="banner" />
               <div className="banner_text_left">
                 <div className="caption_text_1">
-                  <h3 className="font-md-42 font-22">Computers</h3>
-                  <p className="text-g600">Limited time offer!</p>
+                  <h3 className="font-md-42 font-22">Ngày hội sách </h3>
+                  <p className="text-g600">Số lượng có hạn!</p>
                   <Button
                     variant="b500"
                     className="btn-square btw-46 font-20 font-semibold mt-2"
                   >
-                    &#10152;
+                  <strong>+</strong> 
                   </Button>
                 </div>
               </div>
