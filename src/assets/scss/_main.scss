@@ -8,10 +8,10 @@ body {
 .container {
   max-width: 1200px;
 }
-.BestSeller .slick-dots li button:before {
+.product .slick-dots li button:before {
   font-size: 10px;
 }
-.BestSeller .slick-dots li.slick-active button:before {
+.product .slick-dots li.slick-active button:before {
   font-size: 14px;
   color: $b600;
   opacity: 1;

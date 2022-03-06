@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { Button, Image } from "react-bootstrap";
 import Apple from "../Images/apple.svg";
@@ -11,6 +13,9 @@ export default function Footer() {
   const privacy = () => {
     history.push("/privacy-policy");
   };
+  const contact = () => {
+    history.push("/contact-us");
+  };
   return (
     <div>
       <footer>
@@ -18,11 +23,11 @@ export default function Footer() {
           <div className="container grid grid-cols-1 md:grid-cols-2 gap-4  items-center ">
             <div className="newsletter">
               <div className="font-22">
-                Get our latest news and special sales
+                Nhận tin tức mới nhất của chúng tôi và giảm giá đặc biệt
               </div>
               <p className="text">
-                You may unsubscribe at any moment. For that purpose, please find
-                our contact info in the legal notice.
+                Bạn có thể hủy đăng ký bất cứ lúc nào. Với mục đích đó, vui lòng
+                tìm thông tin liên hệ của chúng tôi trong thông báo pháp lý.
               </p>
             </div>
             <div className="btn-search flex">
@@ -31,10 +36,10 @@ export default function Footer() {
                 type="search"
               />
               <Button
-                variant="b500"
+                variant="r200"
                 className="btn-square btw-65 font-14 font-semibold"
               >
-                GET
+                Go !
               </Button>
             </div>
           </div>
@@ -42,70 +47,30 @@ export default function Footer() {
         <div className="footer_main">
           <div class="footer-contact grid grid-rows-4 md:grid-rows-1 grid-flow-col gap-4">
             <div>
-              <h6 className="mb-3">YOUR ACCOUNT</h6>
+              <h6 className="mb-3">Dịch vụ khách hàng</h6>
               <ul className="text-g200">
-                <li>Personal info</li>
-                <li>Orders</li>
-                <li>Credit slips</li>
-                <li>Addresses</li>
+                <li>Thứ hai đến thứ 7</li>
+                <li>8am - 9pm</li>
+                <li>097 691 60 61</li>
+                <li>quynh@gmail.com</li>
               </ul>
             </div>
             <div>
-              <h6 className="mb-3">CUSTOMER SERVICE</h6>
+              <h6 className="mb-3">Đảm bảo</h6>
               <ul className="text-g200">
-                <li>Monday to Friday</li>
-                <li>10am - 6.30pm (NewYork time)</li>
-                <li>+(001) 23 45 67 89</li>
-                <li>shopify@zemez.io</li>
-              </ul>
-            </div>
-            <div>
-              <h6 className="mb-3">OUR GUARANTEES</h6>
-              <ul className="text-g200">
-                <li>Shipping in 3 days</li>
-                <li>Free returns within 14 days</li>
-                <li>Secure payments</li>
-              </ul>
-            </div>
-            <div>
-              <h6 className="mb-3">OUR COMPANY</h6>
-              <ul className="text-g200">
-                <li>Delivery</li>
+                <li>Giao hàng trong vòng 7 ngày</li>
 
-                <li onClick={privacy}>Legal Notice</li>
+                <li>Thanh toán trực tiếp hoặc online</li>
+              </ul>
+            </div>
+            <div>
+              <h6 className="mb-3">Thông tin của chúng tôi</h6>
+              <ul className="text-g200">
+                <li onClick={privacy}>Điều khoản và dịch vụ</li>
 
                 <li>About Us</li>
-                <li>Contact Us</li>
-                <li>Terms and conditions of use</li>
+                <li onClick={contact}>liên hệ chúng tôi</li>
               </ul>
-            </div>
-          </div>
-          <div className="container_big">
-            <div className=" md:flex justify-between items-center">
-              <div className="text-g200">&#169; 2021. Powered by Shopify</div>
-              <div className="flex justify-center my-2">
-                <div className="footer_payments mx-1">
-                  <Image src={Apple} alt="banner" />
-                </div>
-                <div className="footer_payments mx-1">
-                  <Image src={Bitcoin} alt="banner" />
-                </div>
-                <div className="footer_payments mx-1">
-                  <Image src={Diner} alt="banner" />
-                </div>
-                <div className="footer_payments mx-1">
-                  <Image src={Jcb} alt="banner" />
-                </div>
-                <div className="footer_payments mx-1">
-                  <Image src={Visa} alt="banner" />
-                </div>
-              </div>
-              <div>
-                <i class="mx-1 fa fa-facebook"></i>
-                <i class="mx-1 fa fa-twitter"></i>
-                <i class="mx-1 fa fa-instagram"></i>
-                <i class="mx-1 fa fa-youtube"></i>
-              </div>
             </div>
           </div>
         </div>

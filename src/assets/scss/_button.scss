@@ -1,3 +1,5 @@
+/** @format */
+
 .btn {
   height: 44px;
   line-height: 42px;
@@ -106,6 +108,14 @@
 .btn-b500 {
   border-color: $b500;
   background-color: $b500;
+  color: #fff;
+  &:hover {
+    color: #fff;
+  }
+}
+.btn-y600 {
+  border-color: $y600;
+  background-color: $y600;
   color: #fff;
   &:hover {
     color: #fff;
