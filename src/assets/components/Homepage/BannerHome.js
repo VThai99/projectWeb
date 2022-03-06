@@ -6,7 +6,7 @@ import Banner from "../../Images/banner-201806.jpeg";
 export default function BannerHome() {
   return (
     <div>
-      <div className="image_h700 relative">
+      <div className=" relative">
         <Image src={Banner} alt="banner" />
         {/* <div className="banner_text">
           <div className="caption_text">
