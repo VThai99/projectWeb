@@ -22,7 +22,7 @@ export default function Product() {
     <div className="product">
       <div className="container_big">
         <div>
-          <h3 className="font-30 text-b500 text-start ml-2 my-5">
+          <h3 className="font-30 text-gr600 text-start ml-2 my-5">
             O Sách mới nhất
           </h3>
           <div className=" container grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -36,7 +36,7 @@ export default function Product() {
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm - VH media</p>
-                  <p className="font-22 text-b500 font-medium">55000 đ</p>
+                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
                   <Button variant="y600" className="btw-130 btn-square font-11">
                     Thêm vào giỏ hàng
                   </Button>
@@ -53,7 +53,7 @@ export default function Product() {
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-b500 font-medium">55000 đ</p>
+                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
                   <Button variant="y600" className="btw-130 btn-square font-11">
                     Thêm vào giỏ hàng
                   </Button>
@@ -70,7 +70,7 @@ export default function Product() {
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-b500 font-medium">55000 đ</p>
+                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
                   <Button variant="y600" className="btw-130 btn-square font-11">
                     Thêm vào giỏ hàng
                   </Button>
@@ -87,7 +87,7 @@ export default function Product() {
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-b500 font-medium">55000 đ</p>
+                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
                   <Button variant="y600" className="btw-130 btn-square font-11">
                     Thêm vào giỏ hàng
                   </Button>
@@ -104,7 +104,7 @@ export default function Product() {
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-b500 font-medium">55000 đ</p>
+                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
                   <Button variant="y600" className="btw-130 btn-square font-11">
                     Thêm vào giỏ hàng
                   </Button>
@@ -121,7 +121,7 @@ export default function Product() {
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-b500 font-medium">55000 đ</p>
+                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
                   <Button variant="y600" className="btw-130 btn-square font-11">
                     Thêm vào giỏ hàng
                   </Button>
@@ -138,7 +138,7 @@ export default function Product() {
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-b500 font-medium">55000 đ</p>
+                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
                   <Button variant="y600" className="btw-130 btn-square font-11">
                     Thêm vào giỏ hàng
                   </Button>
@@ -155,7 +155,7 @@ export default function Product() {
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-b500 font-medium">55000 đ</p>
+                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
                   <Button variant="y600" className="btw-130 btn-square font-11">
                     Thêm vào giỏ hàng
                   </Button>
@@ -179,7 +179,7 @@ export default function Product() {
           </div>
           <div className="text-detail mt-5 ">
             <p className="font-22 font-medium">Truyện : Tư Phàm</p>
-            <p className="font-30 text-b500 font-medium">Giá : 55000 đ</p>
+            <p className="font-30 text-gr600 font-medium">Giá : 55000 đ</p>
             <p className="text-g600 font-medium"> Tác giả : VH media</p>
             <p className="text-g600 mb-5">
               Nội dung : Một câu truyện thể loại tình cảm và hài hước .

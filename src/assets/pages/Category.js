@@ -12,10 +12,10 @@ import {
   Tabs,
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import Banner from "../Images/banner2.jpg";
-import Apple from "../Images/ip13blue.jpg";
-import Oppo from "../Images/oppo.jpg";
-import Samsung from "../Images/samsung.jpg";
+import img1 from "../Images/Banner3.jpeg";
+import img2 from "../Images/Banner7.jpeg";
+import img3 from "../Images/Banner5.jpeg";
+import img4 from "../Images/Banner4.jpeg";
 let active = [];
 let items = [];
 for (let number = 1; number <= 5; number++) {
@@ -39,7 +39,7 @@ export default function Category() {
           <Breadcrumb>
             <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
 
-            <Breadcrumb.Item active>Category</Breadcrumb.Item>
+            <Breadcrumb.Item active>Thể loại</Breadcrumb.Item>
           </Breadcrumb>
 
           <div className="mt-5">
@@ -57,7 +57,11 @@ export default function Category() {
                         <div>
                           <Card className="card-product">
                             <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Banner} />{" "}
+                              <Card.Img
+                                className="p-2 "
+                                variant="top"
+                                src={img1}
+                              />
                             </NavLink>
                             <div
                               className="product_links__subbutton"
@@ -70,16 +74,19 @@ export default function Category() {
                             </div>
                             <Card.Body className="card-product-body">
                               <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
+                                Nhật ký cầu nguyện hàng ngày
                               </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
+                              <p className="font-medium">
+                                <small>Tác giả - Trần thị kim tú</small>
+                              </p>
+                              <p className="font-22 text-gr600 font-medium">
+                                Giá : 55000 đ
                               </p>
                               <Button
-                                variant="b500"
+                                variant="y600"
                                 className="btw-130 btn-square font-11"
                               >
-                                ADD TO CART
+                                Thêm vào giỏ hàng
                               </Button>
                             </Card.Body>
                           </Card>
@@ -91,7 +98,11 @@ export default function Category() {
                         <div>
                           <Card className="card-product">
                             <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Apple} />{" "}
+                              <Card.Img
+                                className="p-2"
+                                variant="top"
+                                src={img2}
+                              />
                             </NavLink>
                             <div
                               className="product_links__subbutton"
@@ -104,256 +115,19 @@ export default function Category() {
                             </div>
                             <Card.Body className="card-product-body">
                               <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
+                                Nhật ký cầu nguyện hàng ngày
                               </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Apple} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
                               <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
+                                <small>Tác giả - Trần thị kim tú</small>
                               </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Apple} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
+                              <p className="font-22 text-gr600 font-medium">
+                                Giá : 55000 đ
                               </p>
                               <Button
-                                variant="b500"
+                                variant="y600"
                                 className="btw-130 btn-square font-11"
                               >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Apple} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Apple} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Apple} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Apple} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Apple} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Apple} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
+                                Thêm vào giỏ hàng
                               </Button>
                             </Card.Body>
                           </Card>
@@ -365,7 +139,11 @@ export default function Category() {
                         <div>
                           <Card className="card-product">
                             <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
+                              <Card.Img
+                                className="p-2"
+                                variant="top"
+                                src={img3}
+                              />
                             </NavLink>
                             <div
                               className="product_links__subbutton"
@@ -378,256 +156,19 @@ export default function Category() {
                             </div>
                             <Card.Body className="card-product-body">
                               <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
+                                Nhật ký cầu nguyện hàng ngày
                               </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
                               <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
+                                <small>Tác giả - Trần thị kim tú</small>
                               </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
+                              <p className="font-22 text-gr600 font-medium">
+                                Giá : 55000 đ
                               </p>
                               <Button
-                                variant="b500"
+                                variant="y600"
                                 className="btw-130 btn-square font-11"
                               >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
+                                Thêm vào giỏ hàng
                               </Button>
                             </Card.Body>
                           </Card>
@@ -639,7 +180,11 @@ export default function Category() {
                         <div>
                           <Card className="card-product">
                             <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Oppo} />{" "}
+                              <Card.Img
+                                className="p-2"
+                                variant="top"
+                                src={img4}
+                              />
                             </NavLink>
                             <div
                               className="product_links__subbutton"
@@ -652,256 +197,19 @@ export default function Category() {
                             </div>
                             <Card.Body className="card-product-body">
                               <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
+                                Nhật ký cầu nguyện hàng ngày
                               </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Oppo} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
                               <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
+                                <small>Tác giả - Trần thị kim tú</small>
                               </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Oppo} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
+                              <p className="font-22 text-gr600 font-medium">
+                                Giá : 55000 đ
                               </p>
                               <Button
-                                variant="b500"
+                                variant="y600"
                                 className="btw-130 btn-square font-11"
                               >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Oppo} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Oppo} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Oppo} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Oppo} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Samsung} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
-                              </Button>
-                            </Card.Body>
-                          </Card>
-                        </div>
-                        <div>
-                          <Card className="card-product">
-                            <NavLink to="/product-detail">
-                              <Card.Img variant="top" src={Oppo} />{" "}
-                            </NavLink>
-                            <div
-                              className="product_links__subbutton"
-                              onClick={handleShow}
-                            >
-                              <i
-                                class="fa fa-search-plus"
-                                aria-hidden="true"
-                              ></i>
-                            </div>
-                            <Card.Body className="card-product-body">
-                              <p className="font-medium">
-                                Asus 9.7 Zenpad 3s 10 64gb{" "}
-                              </p>
-                              <p className="font-22 text-b500 font-medium">
-                                $175.00 - $175.00
-                              </p>
-                              <Button
-                                variant="b500"
-                                className="btw-130 btn-square font-11"
-                              >
-                                ADD TO CART
+                                Thêm vào giỏ hàng
                               </Button>
                             </Card.Body>
                           </Card>
@@ -925,13 +233,13 @@ export default function Category() {
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                   <div className="image">
-                    <Image src={Banner} alt="banner" />
+                    <Image src={img1} alt="img1" />
                   </div>
                   <div className="text-detail">
                     <p className="font-22 font-medium">
                       Asus 9.7 Zenpad 3s 10 64gb Tablet (Wifi Titanium Gray)
                     </p>
-                    <p className="font-30 text-b500 font-medium">
+                    <p className="font-30 text-gr600 font-medium">
                       $175.00 - $175.00
                     </p>
                     <p className="text-g600 font-medium">
@@ -951,10 +259,10 @@ export default function Category() {
                         placeholder="1"
                       />
                       <Button
-                        variant="b500"
+                        variant="y600"
                         className="btn-square w-100 font-14 font-semibold uppercase"
                       >
-                        Add to cart
+                        A Thêm vào giỏ hàng
                       </Button>
                     </div>
                     <Button
