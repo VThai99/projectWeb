@@ -1,16 +1,15 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
-import Header from "./assets/common/Header";
+import { Route, Switch } from "react-router-dom";
 import ProductDetail from "./assets/common/ProductDetail";
 import Demo from "./assets/components/Demo";
 import OrderSuccess from "./assets/components/OrderSuccess";
 import Accessory from "./assets/pages/Accessory";
+import Clock from "./assets/pages/Author";
 import Cart from "./assets/pages/Cart";
 import Catalog from "./assets/pages/Catalog";
-import Clock from "./assets/pages/Author";
+import Category from "./assets/pages/Category";
 import ContactUs from "./assets/pages/ContactUs";
 import Homepage from "./assets/pages/Homepage";
-import Category from "./assets/pages/Category";
 import Privacy from "./assets/pages/Privacy";
 export default function Routes() {
   return (
@@ -34,7 +33,6 @@ export default function Routes() {
         <Route path="/ordersuccess">
           <OrderSuccess />
         </Route>
-        <Route path="/login"></Route>
         <Route path="/catalog">
           <Catalog />
         </Route>
