@@ -1,3 +1,5 @@
+/** @format */
+
 .container_big {
   max-width: 1810px;
   margin-left: auto;
@@ -58,7 +60,7 @@
   position: relative;
   box-shadow: 0 0 20px 0 rgb(167 168 169 / 30%);
   img {
-    width: 100%;
+    width: 280px;
     height: 370px;
   }
   i {
@@ -92,13 +94,10 @@
   }
 }
 .card-product-body {
-  margin: 30px 0;
+  margin: 5px 0;
   background: #fff;
   border-top: 2px solid #f2f4ff;
   text-align: center;
-  button {
-    display: none;
-  }
 }
 .banner_3 {
   margin-top: 80px;
@@ -121,15 +120,15 @@
 // list product
 .list-product {
   .card-product {
-   // width: 100%;
+    width: 280px;
   }
   .card-img-top {
-    width: 100%;
+    width: 280px;
   }
 }
 .box-detail {
   .image {
-    height: 390px;
+    height: 100%;
   }
 }
 
@@ -141,7 +140,7 @@
   box-shadow: 0 0 3px 0 #dee2e6;
   border-radius: 6px;
   height: auto;
-  min-height: 525px;
+  min-height: 300px;
   background-color: #fff;
   padding: 16px 20px;
   .image_h375 {
@@ -185,14 +184,24 @@
 }
 .product-information {
   .price {
-    color: $r200;
-    font-size: 32px;
+    color: $y500;
+    font-size: 22px;
     font-weight: 500;
-    span {
-      font-size: 20px;
-      color: $g200;
-      text-decoration: line-through;
-    }
+  }
+  .name {
+    color: $b550;
+    font-size: 25px;
+    font-weight: 500;
+  }
+  .name2 {
+    color: #000;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  .author {
+    color: $b500;
+    font-size: 15px;
+    font-weight: 500;
   }
   .btn-check {
     display: none;
@@ -315,7 +324,7 @@
 }
 .read-more-less--less,
 .read-more-less--more {
-  color: blue;
+  color: $y300;
 }
 .text-admin {
   background-color: red;
@@ -356,4 +365,18 @@
     border-top: 1px solid;
     height: 30px;
   }
+}
+.price-number {
+  background-color: $g10;
+  width: 50%;
+  border-radius: 10px;
+}
+.height640 {
+  height: 640px;
+}
+.text-description {
+  font-size: 15px;
+}
+.margin-top250 {
+  margin-top: 250px;
 }

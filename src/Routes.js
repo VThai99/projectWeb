@@ -1,10 +1,12 @@
+/** @format */
+
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import ProductDetail from "./assets/common/ProductDetail";
 import Demo from "./assets/components/Demo";
 import OrderSuccess from "./assets/components/OrderSuccess";
 import Accessory from "./assets/pages/Accessory";
-import Clock from "./assets/pages/Author";
+import Author from "./assets/pages/Author";
 import Cart from "./assets/pages/Cart";
 import Catalog from "./assets/pages/Catalog";
 import Category from "./assets/pages/Category";
@@ -22,7 +24,7 @@ export default function Routes() {
           <Accessory />
         </Route>
         <Route path="/Author">
-          <Clock />
+          <Author />
         </Route>
         <Route path="/Category">
           <Category />
