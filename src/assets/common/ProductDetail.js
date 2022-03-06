@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import {
   Breadcrumb,
@@ -61,10 +63,8 @@ export default function ProductDetail() {
         <div className="container">
           <Breadcrumb>
             <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-            <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-              Catalog
-            </Breadcrumb.Item>
-            <Breadcrumb.Item active>Iphone 13 pro max</Breadcrumb.Item>
+
+            <Breadcrumb.Item active>Sach detail</Breadcrumb.Item>
           </Breadcrumb>
           <div className="box-detail grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>

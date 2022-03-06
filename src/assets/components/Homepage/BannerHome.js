@@ -2,13 +2,13 @@
 
 import React from "react";
 import { Button, Image } from "react-bootstrap";
-import Banner from "../../Images/banner_main.png";
+import Banner from "../../Images/banner-201806.jpeg";
 export default function BannerHome() {
   return (
     <div>
       <div className="image_h700 relative">
         <Image src={Banner} alt="banner" />
-        <div className="banner_text">
+        {/* <div className="banner_text">
           <div className="caption_text">
             <h4 className="text-y600 uppercase font-16">
               NƠI THẬP HỢP ĐỦ CÁC THỂ LOẠI SÁCH
@@ -32,7 +32,7 @@ export default function BannerHome() {
                Lên đến 1.000.000 đ
             </h3>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

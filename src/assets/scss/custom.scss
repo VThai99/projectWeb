@@ -1,3 +1,5 @@
+/** @format */
+
 .container_big {
   max-width: 1810px;
   margin-left: auto;
@@ -58,7 +60,7 @@
   position: relative;
   box-shadow: 0 0 20px 0 rgb(167 168 169 / 30%);
   img {
-    width: 100%;
+    width: 280px;
     height: 370px;
   }
   i {
@@ -92,13 +94,10 @@
   }
 }
 .card-product-body {
-  margin: 30px 0;
+  margin: 5px 0;
   background: #fff;
   border-top: 2px solid #f2f4ff;
   text-align: center;
-  button {
-    display: none;
-  }
 }
 .banner_3 {
   margin-top: 80px;
@@ -121,10 +120,10 @@
 // list product
 .list-product {
   .card-product {
-   // width: 100%;
+    width: 280px;
   }
   .card-img-top {
-    width: 100%;
+    width: 280px;
   }
 }
 .box-detail {

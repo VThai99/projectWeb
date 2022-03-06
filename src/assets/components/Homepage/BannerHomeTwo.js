@@ -8,6 +8,9 @@ export default function BannerHomeTwo() {
   return (
     <div>
       <div className="container_big">
+        <h3 className="font-30 text-gr600 text-start ml-2 my-5">
+          O Sách giảm giá
+        </h3>
         <div className="row">
           <div className="col-4">
             <div className="image_h700 relative">
