@@ -1,19 +1,18 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.scss";
+import DefaultLayout from "./assets/pages/DefaultLayout";
+import Login from "./assets/pages/Login";
 import "./assets/scss/style.scss";
-import Routes from "./Routes";
-import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./assets/common/Header";
-import Footer from "./assets/common/Footer";
 function App() {
   return (
     <div className="App">
-      {" "}
       <Router>
-        <div className="shopmobile-main">
-          <Header />
-          <Routes />
-          <Footer />
-        </div>
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <DefaultLayout />
+        </Switch>
       </Router>
     </div>
   );

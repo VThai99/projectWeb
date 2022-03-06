@@ -11,6 +11,7 @@ import Clock from "./assets/pages/Clock";
 import ContactUs from "./assets/pages/ContactUs";
 import Homepage from "./assets/pages/Homepage";
 import Laptop from "./assets/pages/Laptop";
+import Login from "./assets/pages/Login";
 import Privacy from "./assets/pages/Privacy";
 export default function Routes() {
   return (
@@ -34,7 +35,6 @@ export default function Routes() {
         <Route path="/ordersuccess">
           <OrderSuccess />
         </Route>
-        <Route path="/login"></Route>
         <Route path="/catalog">
           <Catalog />
         </Route>
