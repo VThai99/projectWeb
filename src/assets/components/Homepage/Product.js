@@ -2,21 +2,51 @@
 
 import React, { useState } from "react";
 import { Card, Button, Modal, Image } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Slider from "react-slick";
+import Swal from "sweetalert2";
 import Banner from "../../Images/Banner2.gif";
 import Banner3 from "../../Images/banner3.jpg";
-export default function Product() {
+export default function Product({ books }) {
   const [show, setShow] = useState(false);
-
+  const [bookdata, setbookdata] = useState({});
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const dispatch = useDispatch();
+  const handleShow = (item) => {
+    setShow(true);
+    setbookdata(item);
+  };
+  const [limit, setLimit] = useState(8);
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 1,
+  };
+  const addToCart = (item) => {
+    Swal.fire({
+      title: "Do you want to buy this book?",
+      icon: "question",
+      iconHtml: "?",
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
+      showCancelButton: true,
+      showCloseButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch({
+          type: "ADDTOCART",
+          newItem: item,
+        });
+        Swal.fire(
+          "Buy!",
+          "See in your cart.",
+          "success"
+        );
+      }
+    });
   };
   return (
     <div className="product">
@@ -26,142 +56,43 @@ export default function Product() {
             O Sách mới nhất
           </h3>
           <div className=" container grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div>
-              <Card className="card-product">
-                <NavLink to="/product-detail">
-                  <Card.Img className="p-2" variant="top" src={Banner} />{" "}
-                </NavLink>
-                <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
-                </div>
-                <Card.Body className="card-product-body">
-                  <p className="font-medium">Tư Phàm - VH media</p>
-                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
-                  <Button variant="y600" className="btw-130 btn-square font-11">
-                    Thêm vào giỏ hàng
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-            <div>
-              <Card className="card-product">
-                <NavLink to="/product-detail">
-                  <Card.Img className="p-2" variant="top" src={Banner} />{" "}
-                </NavLink>
-                <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
-                </div>
-                <Card.Body className="card-product-body">
-                  <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
-                  <Button variant="y600" className="btw-130 btn-square font-11">
-                    Thêm vào giỏ hàng
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>{" "}
-            <div>
-              <Card className="card-product">
-                <NavLink to="/product-detail">
-                  <Card.Img className="p-2" variant="top" src={Banner} />{" "}
-                </NavLink>
-                <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
-                </div>
-                <Card.Body className="card-product-body">
-                  <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
-                  <Button variant="y600" className="btw-130 btn-square font-11">
-                    Thêm vào giỏ hàng
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>{" "}
-            <div>
-              <Card className="card-product">
-                <NavLink to="/product-detail">
-                  <Card.Img className="p-2" variant="top" src={Banner} />{" "}
-                </NavLink>
-                <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
-                </div>
-                <Card.Body className="card-product-body">
-                  <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
-                  <Button variant="y600" className="btw-130 btn-square font-11">
-                    Thêm vào giỏ hàng
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>{" "}
-            <div>
-              <Card className="card-product">
-                <NavLink to="/product-detail">
-                  <Card.Img className="p-2" variant="top" src={Banner} />{" "}
-                </NavLink>
-                <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
-                </div>
-                <Card.Body className="card-product-body">
-                  <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
-                  <Button variant="y600" className="btw-130 btn-square font-11">
-                    Thêm vào giỏ hàng
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>{" "}
-            <div>
-              <Card className="card-product">
-                <NavLink to="/product-detail">
-                  <Card.Img className="p-2" variant="top" src={Banner} />{" "}
-                </NavLink>
-                <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
-                </div>
-                <Card.Body className="card-product-body">
-                  <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
-                  <Button variant="y600" className="btw-130 btn-square font-11">
-                    Thêm vào giỏ hàng
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>{" "}
-            <div>
-              <Card className="card-product">
-                <NavLink to="/product-detail">
-                  <Card.Img className="p-2" variant="top" src={Banner} />{" "}
-                </NavLink>
-                <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
-                </div>
-                <Card.Body className="card-product-body">
-                  <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
-                  <Button variant="y600" className="btw-130 btn-square font-11">
-                    Thêm vào giỏ hàng
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>{" "}
-            <div>
-              <Card className="card-product">
-                <NavLink to="/product-detail">
-                  <Card.Img className="p-2" variant="top" src={Banner} />{" "}
-                </NavLink>
-                <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
-                </div>
-                <Card.Body className="card-product-body">
-                  <p className="font-medium">Tư Phàm </p>
-                  <p className="font-22 text-gr600 font-medium">55000 đ</p>
-                  <Button variant="y600" className="btw-130 btn-square font-11">
-                    Thêm vào giỏ hàng
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
+            {books.map((item, index) => {
+              return (
+                index < limit && (
+                  <div>
+                    <Card className="card-product">
+                      <NavLink to="/product-detail">
+                        <Card.Img className="p-2" variant="top" src={Banner} />{" "}
+                      </NavLink>
+                      <div
+                        className="product_links__subbutton"
+                        onClick={() => {
+                          handleShow(item);
+                        }}
+                      >
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      </div>
+                      <Card.Body className="card-product-body">
+                        <p className="font-medium">{item.name}</p>
+                        <p className="font-22 text-gr600 font-medium">
+                          {item.price} đ
+                        </p>
+                        <Button
+                          variant="y600"
+                          className="btw-130 btn-square font-11"
+                          disabled={item.inventory >= 1 ? false : true}
+                          onClick={() => {
+                            addToCart(item);
+                          }}
+                        >
+                          Thêm vào giỏ hàng
+                        </Button>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                )
+              );
+            })}
           </div>
         </div>
       </div>
@@ -179,22 +110,29 @@ export default function Product() {
           </div>
           <div className="text-detail mt-5 ">
             <p className="font-22 font-medium">Truyện : Tư Phàm</p>
-            <p className="font-30 text-gr600 font-medium">Giá : 55000 đ</p>
-            <p className="text-g600 font-medium"> Tác giả : VH media</p>
-            <p className="text-g600 mb-5">
-              Nội dung : Một câu truyện thể loại tình cảm và hài hước .
+            <p className="font-30 text-gr600 font-medium">
+              Giá : {bookdata.price} đ
             </p>
-            <h4 className="font-14 mt-5">Số Lượng:</h4>
+            <p className="text-g600 font-medium">
+              {" "}
+              Tác giả : {bookdata.authors?.name}
+            </p>
+            <p className="text-g600 mb-5">Nội dung : {bookdata.status} .</p>
+            <h4 className="font-14 mt-5">Số Lượng: {bookdata.inventory}</h4>
             <div className="flex justify-between mt-3">
               <input
                 className="ipw-120 height-44 text-center"
                 type="text"
                 id="fname"
                 name="fname"
-                placeholder="1"
+                placeholder={bookdata.inventory >= 1 ? 1 : 0}
               />
               <Button
                 variant="y600"
+                disabled={bookdata.inventory >= 1 ? false : true}
+                onClick={() => {
+                  addToCart(bookdata);
+                }}
                 className="btn-square btw-250 font-14 font-semibold uppercase"
               >
                 Thêm vào giỏ hàng
