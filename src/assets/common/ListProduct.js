@@ -44,7 +44,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -69,7 +69,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -94,7 +94,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -119,7 +119,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -144,7 +144,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -169,7 +169,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -194,7 +194,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -219,7 +219,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -244,7 +244,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -273,7 +273,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -298,7 +298,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -323,7 +323,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -348,7 +348,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -373,7 +373,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -398,7 +398,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -423,7 +423,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -448,7 +448,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -473,7 +473,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -502,7 +502,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -527,7 +527,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -552,7 +552,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -577,7 +577,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -602,7 +602,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -627,7 +627,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -652,7 +652,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -677,7 +677,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -702,7 +702,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -731,7 +731,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -756,7 +756,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -781,7 +781,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -806,7 +806,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -831,7 +831,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -856,7 +856,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -881,7 +881,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -906,7 +906,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>
@@ -931,7 +931,7 @@ export default function ListProduct() {
                       className="product_links__subbutton"
                       onClick={handleShow}
                     >
-                      <i class="fa fa-search-plus" aria-hidden="true"></i>
+                      <i className="fa fa-search-plus" aria-hidden="true"></i>
                     </div>
                     <Card.Body className="card-product-body">
                       <p className="font-medium">Asus 9.7 Zenpad 3s 10 64gb </p>

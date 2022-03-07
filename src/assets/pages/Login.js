@@ -64,49 +64,49 @@ export default function Login() {
     });
   }
   return (
-    <section class="user">
-      <div class="user_options-container">
-        <div class="user_options-text">
-          <div class="user_options-unregistered">
-            <h2 class="user_unregistered-title">Don't have an account?</h2>
-            <p class="user_unregistered-text">
+    <section className="user">
+      <div className="user_options-container">
+        <div className="user_options-text">
+          <div className="user_options-unregistered">
+            <h2 className="user_unregistered-title">Don't have an account?</h2>
+            <p className="user_unregistered-text">
               Let's create a new account to get happy time with my website
             </p>
-            <button class="user_unregistered-signup" id="signup-button">
+            <button className="user_unregistered-signup" id="signup-button">
               Sign up
             </button>
           </div>
 
-          <div class="user_options-registered">
-            <h2 class="user_registered-title">Have an account?</h2>
-            <p class="user_registered-text">Let's login</p>
-            <button class="user_registered-login" id="login-button">
+          <div className="user_options-registered">
+            <h2 className="user_registered-title">Have an account?</h2>
+            <p className="user_registered-text">Let's login</p>
+            <button className="user_registered-login" id="login-button">
               Login
             </button>
           </div>
         </div>
 
-        <div class="user_options-forms" id="user_options-forms">
-          <div class="user_forms-login">
-            <h2 class="forms_title">Login</h2>
-            <form class="forms_form">
-              <fieldset class="forms_fieldset">
-                <div class="forms_field">
+        <div className="user_options-forms" id="user_options-forms">
+          <div className="user_forms-login">
+            <h2 className="forms_title">Login</h2>
+            <form className="forms_form">
+              <fieldset className="forms_fieldset">
+                <div className="forms_field">
                   <input
                     type="text"
                     placeholder="UserName"
-                    class="forms_field-input"
+                    className="forms_field-input"
                     value={userName}
                     onChange={(e) => setUserName(e.target.value)}
                     required
                     autofocus
                   />
                 </div>
-                <div class="forms_field">
+                <div className="forms_field">
                   <input
                     type="password"
                     placeholder="Password"
-                    class="forms_field-input"
+                    className="forms_field-input"
                     value={pass}
                     onChange={(e) => setPass(e.target.value)}
                     required
@@ -114,80 +114,80 @@ export default function Login() {
                 </div>
               </fieldset>
             </form>
-            <div class="forms_buttons">
-              <button onClick={handleLogin} class="forms_buttons-action">
+            <div className="forms_buttons">
+              <button onClick={handleLogin} className="forms_buttons-action">
                 Log In
               </button>
             </div>
           </div>
-          <div class="user_forms-signup">
-            <h2 class="forms_title">Sign Up</h2>
-            <form class="forms_form">
-              <fieldset class="forms_fieldset">
-                <div class="forms_field">
+          <div className="user_forms-signup">
+            <h2 className="forms_title">Sign Up</h2>
+            <form className="forms_form">
+              <fieldset className="forms_fieldset">
+                <div className="forms_field">
                   <input
                     type="text"
                     placeholder="Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    class="forms_field-input"
+                    className="forms_field-input"
                     required
                   />
                 </div>
-                <div class="forms_field">
+                <div className="forms_field">
                   <input
                     type="text"
                     placeholder="Username"
                     value={userNameRegis}
                     onChange={(e) => setUserNameRegis(e.target.value)}
-                    class="forms_field-input"
+                    className="forms_field-input"
                     required
                   />
                 </div>
-                <div class="forms_field">
+                <div className="forms_field">
                   <input
                     type="text"
                     placeholder="Phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    class="forms_field-input"
+                    className="forms_field-input"
                     required
                   />
                 </div>
-                <div class="forms_field">
+                <div className="forms_field">
                   <input
                     type="text"
                     placeholder="Address"
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
-                    class="forms_field-input"
+                    className="forms_field-input"
                     required
                   />
                 </div>
-                <div class="forms_field">
+                <div className="forms_field">
                   <input
                     type="email"
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    class="forms_field-input"
+                    className="forms_field-input"
                     required
                   />
                 </div>
-                <div class="forms_field">
+                <div className="forms_field">
                   <input
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
-                    class="forms_field-input"
+                    className="forms_field-input"
                     required
                   />
                 </div>
               </fieldset>
             </form>{" "}
-            <div class="forms_buttons">
-              <button onClick={handleSignUp} class="forms_buttons-action">
+            <div className="forms_buttons">
+              <button onClick={handleSignUp} className="forms_buttons-action">
                 Sign Up
               </button>
             </div>
