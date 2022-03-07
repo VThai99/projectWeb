@@ -32,7 +32,7 @@ export default function Product() {
                   <Card.Img className="p-2" variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  <i className="fa fa-search-plus" aria-hidden="true"></i>
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm - VH media</p>
@@ -49,7 +49,7 @@ export default function Product() {
                   <Card.Img className="p-2" variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  <i className="fa fa-search-plus" aria-hidden="true"></i>
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
@@ -66,7 +66,7 @@ export default function Product() {
                   <Card.Img className="p-2" variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  <i className="fa fa-search-plus" aria-hidden="true"></i>
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
@@ -83,7 +83,7 @@ export default function Product() {
                   <Card.Img className="p-2" variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  <i className="fa fa-search-plus" aria-hidden="true"></i>
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
@@ -100,7 +100,7 @@ export default function Product() {
                   <Card.Img className="p-2" variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  <i className="fa fa-search-plus" aria-hidden="true"></i>
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
@@ -117,7 +117,7 @@ export default function Product() {
                   <Card.Img className="p-2" variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  <i className="fa fa-search-plus" aria-hidden="true"></i>
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
@@ -134,7 +134,7 @@ export default function Product() {
                   <Card.Img className="p-2" variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  <i className="fa fa-search-plus" aria-hidden="true"></i>
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>
@@ -151,7 +151,7 @@ export default function Product() {
                   <Card.Img className="p-2" variant="top" src={Banner} />{" "}
                 </NavLink>
                 <div className="product_links__subbutton" onClick={handleShow}>
-                  <i class="fa fa-search-plus" aria-hidden="true"></i>
+                  <i className="fa fa-search-plus" aria-hidden="true"></i>
                 </div>
                 <Card.Body className="card-product-body">
                   <p className="font-medium">Tư Phàm </p>

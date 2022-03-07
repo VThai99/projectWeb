@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Breadcrumb,
   Button,
@@ -8,17 +8,32 @@ import {
   Form,
   Image,
 } from "react-bootstrap";
-
+import { ProductDetailService } from "../../services/ProductDetailService";
 import ReactReadMoreReadLess from "react-read-more-read-less";
-import { useHistory } from "react-router";
+import { useHistory, useParams } from "react-router";
 
 import Banner from "../Images/Banner3.jpeg";
 export default function ProductDetail() {
+  let { id } = useParams();
   const history = useHistory();
   const Cart = () => {
     history.push("/cart");
   };
+  const [data, setData] = useState([]);
+  const [athur, setathur] = useState();
 
+  useEffect(() => {
+    getData();
+  }, []);
+  function getData() {
+    ProductDetailService.getDetail(id).then((response) => {
+      if (response.status === 200) {
+        console.log(response.data);
+        setData(response.data);
+        console.log(response.data.authors.length);
+      }
+    });
+  }
   return (
     <div>
       <div className="product-detail-page">
@@ -39,26 +54,32 @@ export default function ProductDetail() {
             <div className="product-information mt-5">
               <h3 className="name text-center text-md-left">Tên sách :</h3>
               <h3 className="name2 text-center text-md-center mt-4">
-                Nhật kí cầu nguyện hàng ngày
+                {data?.name}
               </h3>
               <h3 className="price text-center text-md-left mt-3">
-                Tác giả : Trần Thị Kim Tú
+                {/*  : {data?.authors[0].id} */}
+                Tác giả : {data.authors?.length && data.authors[0].name}
+                {/* {data.map((item, index) => {
+                  return {item};
+                })} */}
               </h3>
               <h6 className="author text-center text-md-left mt-5">
-                Thể loại : Tình cảm
+                {/*{data?.authors.length } */}
+                Thể loại :  {data.types?.length && data.types[0].name}
+                {/* 0 && data.authors[0].name */}
               </h6>
               <div className="radio-price">
                 <div className="price-number pl-2">
                   <p>
-                    Đơn giá : <strong>59.000đ</strong>
+                    Đơn giá : <strong>{data.price}</strong> đ
                   </p>
                 </div>
               </div>
 
               <div className="radio-color"></div>
               <div className="box-promotion font-14">
-                <div class="promotion-title w-75 mt-5">
-                  số lượng hiện tại: 5
+                <div className="promotion-title w-75 mt-5">
+                  số lượng hiện tại: {data.inventory}
                 </div>
               </div>
               <Button
@@ -84,37 +105,16 @@ export default function ProductDetail() {
                   O Đánh giá chi tiết : Nhật kí cầu nguyện hàng ngày
                 </h3>
                 <br />
-                <ReactReadMoreReadLess
+                {/* <ReactReadMoreReadLess
                   charLimit={200}
                   readMoreText={"Đọc tiếp ▼"}
                   readLessText={"Thu lại ▲"}
                   readMoreClassName="read-more-less--more"
                   readLessClassName="read-more-less--less"
                 >
-                  Tôi không ưa Sato. Cậu nam sinh ngang bướng Yamaguchi được xếp
-                  ngồi cạnh Sato - cô gái giản dị, chậm chạp, vụng về và hoàn
-                  toàn chẳng xinh đẹp. Trong những ngày tháng rất đỗi bình yên
-                  của thời học sinh cấp ba, mặc dù không muốn thừa nhận nhưng
-                  Yamaguchi đang dần bị thu hút bởi cô bạn Sato ngồi cạnh. Vào
-                  một ngày, chỉ bởi một câu nói của Sato khi cô bị sốt và ngất
-                  xỉu, mối quan hệ giữa hai người họ tiến triển một cách nhanh
-                  chóng... Đây là câu chuyện thanh xuân kể về những ngày tháng
-                  thường nhật có đủ dư vị chua ngọt, có những rung động bồi hồi
-                  giữa Yamaguchi và cô bạn Sato ngồi cạnh. -------------------
-                  “Một thứ cảm xúc rất kỳ lạ. Sato đang ở cách xa tôi. Ở bàn bên
-                  cạnh, cô ấy vẫn thường quay sang bắt chuyện với tôi, hỏi han
-                  tôi một cách vượt quá mức cần thiết, và thường xuyên cho tôi
-                  kẹo. Ở bàn bên cạnh, tôi vẫn hay nhìn cô ấy bị giáo viên gọi
-                  lên và luôn bí câu trả lời. Ở bàn bên cạnh, tôi vẫn hay nhìn
-                  cô ấy vừa cười vừa nói những câu chuyện hết sức nhàm chán, và
-                  nhìn cô ấy tết lại mái tóc thành một dải duy nhất. Thế nhưng,
-                  từ giờ trở đi, Sato không còn ngồi cạnh tôi nữa...” Giá sản
-                  phẩm trên Tiki đã bao gồm thuế theo luật hiện hành. Bên cạnh
-                  đó, tuỳ vào loại sản phẩm, hình thức và địa chỉ giao hàng mà
-                  có thể phát sinh thêm chi phí khác như phí vận chuyển, phụ phí
-                  hàng cồng kềnh, thuế nhập khẩu (đối với đơn hàng giao từ nước
-                  ngoài có giá trị trên 1 triệu đồng).....
-                </ReactReadMoreReadLess>
+                  <p></p>
+                </ReactReadMoreReadLess> */}
+                <p className="pl-5"> {data.description}</p>
               </div>
             </div>
           </div>

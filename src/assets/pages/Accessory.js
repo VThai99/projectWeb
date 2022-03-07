@@ -60,7 +60,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -90,7 +90,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -120,7 +120,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -150,7 +150,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -180,7 +180,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -210,7 +210,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -240,7 +240,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -270,7 +270,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -300,7 +300,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -334,7 +334,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -364,7 +364,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -394,7 +394,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -424,7 +424,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -454,7 +454,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -484,7 +484,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -514,7 +514,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -544,7 +544,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -574,7 +574,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -608,7 +608,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -638,7 +638,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -668,7 +668,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -698,7 +698,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -728,7 +728,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -758,7 +758,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -788,7 +788,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -818,7 +818,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -848,7 +848,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -882,7 +882,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -912,7 +912,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -942,7 +942,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -972,7 +972,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -1002,7 +1002,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -1032,7 +1032,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -1062,7 +1062,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -1092,7 +1092,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
@@ -1122,7 +1122,7 @@ export default function Accessory() {
                               onClick={handleShow}
                             >
                               <i
-                                class="fa fa-search-plus"
+                                className="fa fa-search-plus"
                                 aria-hidden="true"
                               ></i>
                             </div>
