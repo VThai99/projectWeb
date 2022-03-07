@@ -1,65 +1,103 @@
 /** @format */
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form, Image, Tab, Tabs } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import Banner from "../Images/Banner1.jpeg";
 
 export default function Cart() {
+  const product = useSelector((state) => state.Cart);
+  const [totalMoney, setTotalMoney] = useState(0);
+  const count = useSelector((state) => state.numberCart);
+  const dispatch = useDispatch();
   const history = useHistory();
   const orderSuccess = () => {
     history.push("/ordersuccess");
   };
-  const [count, setCount] = useState(1);
-
+  useEffect(() => {
+    const getTotal = () => {
+      let total = 0;
+      product.forEach((item) => {
+        total += item.price * item.quantity;
+      });
+      setTotalMoney(total);
+    };
+    localStorage.setItem("count", count);
+    localStorage.setItem("cart", JSON.stringify(product));
+    getTotal();
+  }, [product, count]);
+  const removeItem = (id) => {
+    dispatch({
+      type: "REMOVE",
+      id: id,
+    });
+  };
+  const formatMoney = (value) => {
+    return value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+  };
+  const updateQuantity = async (e, id) => {
+    if (e.target.value === "") {
+      e.target.value = 0;
+    }
+    let quantity = e.target.value;
+    if (quantity === "0") {
+      removeItem(id);
+    }
+    dispatch({
+      type: "UPDATEQUANTITY",
+      id: id,
+      updateQuantity: quantity,
+    });
+  };
   return (
     <div className="cart-page">
       <div className="box-cart">
         <div className="px-4 py-4">
-          <div className="grid grid-cols-12 gap-4">
-            <div className="col-span-3 md:col-span-2">
-              <div className="cart-image-product">
-                <Image src={Banner} alt="banner" />
-              </div>
-            </div>
-            <div className="col-span-9 md:col-span-10">
-              <div className="flex justify-between items-center">
-                <h4 className="font-14 font-medium m-0">Sách 7 love</h4>
-                <p className="font-14 text-r300 m-0">26.000đ</p>
-              </div>
-              {/* <p className="font-12 text-blue-500">9 mã khuyến mại</p> */}
-
-              <div className="flex justify-between my-3">
-                <Form.Select size="sm">
-                  <option>Màu Đen</option>
-                  <option>Màu Trắng</option>
-                  <option>Màu Vàng</option>
-                  <option>Màu Hồng</option>
-                </Form.Select>
-                <div className="choosenumber">
-                  <button
-                    disabled={count <= 1 ? true : false}
-                    onClick={() => {
-                      setCount(count - 1);
-                    }}
-                  >
-                    <div className="btn-up-down ">&#8722;</div>
-                  </button>
-                  <input className="input-number" value={count} readOnly />
-                  <button
-                    onClick={() => {
-                      setCount(count + 1);
-                    }}
-                  >
-                    <div className="btn-up-down">&#43;</div>
-                  </button>
+          {product.map((item, index) => {
+            return (
+              <div className="grid grid-cols-12 gap-4">
+                <div className="col-span-3 md:col-span-2">
+                  <div className="cart-image-product">
+                    <Image src={Banner} alt="banner" />
+                  </div>
+                </div>
+                <div className="col-span-9 md:col-span-10">
+                  <div className="flex justify-between items-center">
+                    <h4 className="font-14 font-medium m-0">{item.name}</h4>
+                    <p className="font-14 text-r300 m-0">
+                      Giá: {formatMoney(item.price)}đ{" "}
+                      <Button
+                        color="danger"
+                        variant="contained"
+                        onClick={() => removeItem(item.id)}
+                      >
+                        X
+                      </Button>
+                    </p>
+                  </div>
+                  <div className="flex justify-between my-3">
+                    <div className="choosenumber">
+                      <span className="font-14 text-r300 p-0">Số lượng:</span>
+                      <input
+                        type="number"
+                        className="form-control w-50 ml-3 font-weight-bold  font-italic"
+                        min="0"
+                        defaultValue={item.quantity}
+                        onChange={(e) => {
+                          updateQuantity(e, item.id);
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+            );
+          })}
+
           <div className="flex justify-between mt-5">
-            <p className="font-14">Tạm tính (1 sản phẩm):</p>
-            <p className="font-14 text-r300 p-0">26 .000đ</p>
+            <p className="font-14">Tạm tính ({count} sản phẩm):</p>
+            <p className="font-14 text-r300 p-0">{formatMoney(totalMoney)}đ</p>
           </div>
         </div>
         <div className="box-cart-detail ">
