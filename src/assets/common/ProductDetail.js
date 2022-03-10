@@ -21,7 +21,7 @@ export default function ProductDetail() {
   };
   const [data, setData] = useState([]);
   const [athur, setathur] = useState();
-
+  const [count, setCount] = useState(1);
   useEffect(() => {
     getData();
   }, []);
@@ -33,6 +33,10 @@ export default function ProductDetail() {
         console.log(response.data.authors.length);
       }
     });
+  }
+  function editSetCount(e) {
+    const x = Number(e.target.value);
+    isNaN(x) ? setCount(1) : setCount(x);
   }
   return (
     <div>
@@ -47,7 +51,7 @@ export default function ProductDetail() {
             <div>
               <div className="image">
                 <div className="image_3_2">
-                  <Image src={Banner} alt="banner" />
+                  <Image src={data?.imagePath} alt="banner" />
                 </div>
               </div>
             </div>
@@ -57,16 +61,13 @@ export default function ProductDetail() {
                 {data?.name}
               </h3>
               <h3 className="price text-center text-md-left mt-3">
-                {/*  : {data?.authors[0].id} */}
                 Tác giả : {data.authors?.length && data.authors[0].name}
-                {/* {data.map((item, index) => {
-                  return {item};
-                })} */}
               </h3>
-              <h6 className="author text-center text-md-left mt-5">
-                {/*{data?.authors.length } */}
-                Thể loại :  {data.types?.length && data.types[0].name}
-                {/* 0 && data.authors[0].name */}
+              <h6 className="author text-center text-md-left mt-2">
+                Mã sách :{data?.bookCode}
+              </h6>
+              <h6 className="author text-center text-md-left mt-3">
+                Thể loại : {data.types?.length && data.types[0].name}
               </h6>
               <div className="radio-price">
                 <div className="price-number pl-2">
@@ -78,14 +79,46 @@ export default function ProductDetail() {
 
               <div className="radio-color"></div>
               <div className="box-promotion font-14">
-                <div className="promotion-title w-75 mt-5">
+                <div className="promotion-title w-75 mt-4">
                   số lượng hiện tại: {data.inventory}
+                </div>
+                <div className="promotion-title w-75 mt-2">
+                  <div class="pt-3 bd-highlight">
+                    <div className="quantity d-flex justify-content-center align-items-center ">
+                      <button
+                        className="d-flex justify-content-center align-items-center btn-background"
+                        disabled={count <= 1 ? true : false}
+                        onClick={() => {
+                          setCount(count - 1);
+                        }}
+                      >
+                        <div className="btn-up-down ">&#8722;</div>
+                      </button>
+                      <input
+                        className="number text-center"
+                        type="tel"
+                        value={count}
+                        readOnly={true}
+                        onChange={(e) => editSetCount(e)}
+                      />
+                      <button
+                        className="d-flex justify-content-center align-items-center btn-background"
+                        disabled={count >= data.inventory}
+                        onClick={() => {
+                          setCount(count + 1);
+                        }}
+                      >
+                        <div className="btn-up-down ">&#43;</div>
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <Button
                 variant="r200"
-                className="btn-square w-75 btn-buy-now mt-5"
+                className="btn-square w-75 btn-buy-now mt-4"
                 onClick={Cart}
+                disabled={data.inventory === 0}
               >
                 <h3 className="uppercase font-20">Mua ngay</h3>
                 <p className="font-13 m-0">
@@ -118,7 +151,7 @@ export default function ProductDetail() {
               </div>
             </div>
           </div>
-          <div className="box-answer-comment mt-5">
+          {/* <div className="box-answer-comment mt-5">
             <p className="font-20 font-medium">Hỏi & Đáp về sản phẩm</p>
             <>
               <FloatingLabel controlId="floatingTextarea" className="relative">
@@ -138,7 +171,7 @@ export default function ProductDetail() {
             </>
             <div className="box-c-user-comment grid grid-cols-12 gap-6">
               <div className="avatar col-span-12 md:col-span-2 lg:col-span-1">
-                {/* <Image src={Banner6} alt="banner" /> */}
+                <Image  alt="banner" />
               </div>
               <div className="c-comment-box__content col-span-12 md:col-span-10 lg:col-span-11">
                 <p className="font-18 m-0">
@@ -174,7 +207,7 @@ export default function ProductDetail() {
             </div>
             <div className="box-c-user-comment grid grid-cols-12 gap-6">
               <div className="avatar col-span-12 md:col-span-2 lg:col-span-1">
-                {/* <Image src={Banner6} alt="banner" /> */}
+              <Image  alt="banner" />
               </div>
               <div className="c-comment-box__content col-span-12 md:col-span-10 lg:col-span-11">
                 <p className="font-18 m-0">
@@ -201,7 +234,7 @@ export default function ProductDetail() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
