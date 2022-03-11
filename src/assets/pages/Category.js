@@ -13,7 +13,7 @@ import {
 } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import img1 from "../Images/Banner3.jpeg";
-
+import PaginationSection from "../common/PaginationSection";
 import { CategoryService } from "../../services/CategoryService";
 import { home } from "../../services/home";
 
@@ -24,13 +24,16 @@ export default function Category() {
   const [book, setBooks] = useState([]);
   const [show, setShow] = useState(false);
   const [dataModal, setDataModal] = useState([]);
-
+  const [Page, setPage] = useState({
+    number: 1,
+    size: 9,
+    totalElements: 10,
+  });
   useEffect(() => {
     getCategory();
   }, []);
   function getCategory() {
     CategoryService.getList().then((res) => {
-      // console.log(res.data[0]);
       setCategory(res.data);
       setCategoryActive(res.data[0].name);
     });
@@ -43,49 +46,49 @@ export default function Category() {
   function getBook() {
     let a = [];
     home.getListBook().then((res) => {
-      // console.log("categoryActive", categoryActive);
-      // console.log(res.data);
       res.data.map((item) => {
-        // console.log(item.types.length && item.types[0].name);
         if (item.types.length && item.types[0].name == categoryActive) {
           a.push(item);
         }
-        // data.authors?.length && data.authors[0].name
       });
-      // console.log(a);
       setData(a);
+
+      setPage({
+        ...Page,
+        number: 1,
+        size: 9,
+        totalElements: a.length,
+      });
       setBooks(res.data);
     });
   }
-  useEffect(() => {
-    //  console.log(data, category);
-  }, [data]);
+
   function handleMoveTab(e) {
-  //  console.log("move", e);
     let a = category[e].name;
-    // console.log(a)
     GetTabBook(a);
   }
   function GetTabBook(cate) {
     let a = [];
-    // console.log(book);
     book.map((item) => {
       if (item.types.length && item.types[0].name == cate) {
         a.push(item);
       }
     });
-    //console.log(a);
+    setPage({
+      ...Page,
+      number: 1,
+      size: 9,
+      totalElements: a.length,
+    });
     setData(a);
   }
-  // let active = [];
-  // let items = [];
-  // for (let number = 1; number <= 5; number++) {
-  //   items.push(
-  //     <Pagination.Item key={number} active={number === active}>
-  //       {number}
-  //     </Pagination.Item>
-  //   );
-  // }
+  function handlePaging(number) {
+    console.log(number);
+    setPage({
+      ...Page,
+      number: number,
+    });
+  }
   return (
     <div>
       {category && data && (
@@ -116,35 +119,44 @@ export default function Category() {
                                 {data.map((item, i) => {
                                   return (
                                     <div>
-                                      <Card className="card-product">
-                                        <Link to={`/product-detail/${item.id}`}>
-                                          <Card.Img
-                                            className="p-2 "
-                                            variant="top"
-                                            src={item.imagePath}
-                                          />
-                                        </Link>
-                                       
-                                        <Card.Body className="card-product-body pt-2">
-                                          <p className="font-medium mb-0">
-                                            {item.name}
-                                          </p>
-                                          <p className="font-medium  mb-0">
-                                            <small>
-                                              Tác giả - {item.authors[0].name}
-                                            </small>
-                                          </p>
-                                          <p className="font-22 text-gr600 font-medium">
-                                            Giá :{item.price} đ
-                                          </p>
-                                          <Button
-                                            variant="y600"
-                                            className="btw-130 btn-square font-11"
-                                          >
-                                            Thêm vào giỏ hàng
-                                          </Button>
-                                        </Card.Body>
-                                      </Card>
+                                      {(Page.number - 1) * Page.size <= i &&
+                                        i < Page.number * Page.size && (
+                                          <>
+                                            {" "}
+                                            <Card className="card-product">
+                                              <Link
+                                                to={`/product-detail/${item.id}`}
+                                              >
+                                                <Card.Img
+                                                  className="p-2 "
+                                                  variant="top"
+                                                  src={item.imagePath}
+                                                />
+                                              </Link>
+
+                                              <Card.Body className="card-product-body pt-2">
+                                                <p className="font-medium mb-0">
+                                                  {item.name}
+                                                </p>
+                                                <p className="font-medium  mb-0">
+                                                  <small>
+                                                    Tác giả -{" "}
+                                                    {item.authors[0].name}
+                                                  </small>
+                                                </p>
+                                                <p className="font-22 text-gr600 font-medium">
+                                                  Giá :{item.price} đ
+                                                </p>
+                                                <Button
+                                                  variant="y600"
+                                                  className="btw-130 btn-square font-11"
+                                                >
+                                                  Thêm vào giỏ hàng
+                                                </Button>
+                                              </Card.Body>
+                                            </Card>
+                                          </>
+                                        )}
                                     </div>
                                   );
                                 })}
@@ -155,9 +167,15 @@ export default function Category() {
                       </Tabs>
                     </div>
 
-                    {/* <div className="flex justify-center mt-5">
-                    <Pagination size="lg">{items}</Pagination>
-                    </div> */}
+                    <div className="flex justify-center mt-5">
+                      {" "}
+                      <PaginationSection
+                        size={Page.size}
+                        number={Page.number}
+                        totalElements={Page.totalElements}
+                        handlePaging={handlePaging}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

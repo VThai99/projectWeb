@@ -1,0 +1,26 @@
+/** @format */
+
+.pagination .page-item .page-link {
+  color: #8c2e2e;
+  &:hover {
+    background-color: #c7b52d !important;
+    color: #7a7b6a;
+  }
+}
+.pagination .page-item.active .page-link {
+  border-color: #a39b26;
+  background-color: #ffb802;
+  color: white;
+  &:hover {
+    background-color: #ce8908 !important;
+    color: rgb(176, 177, 176);
+  }
+}
+.page-item disabled {
+  border-color: #ffb802;
+  color: #8c2e2e;
+  &:hover {
+    background-color: #c7b52d !important;
+    color: #fff;
+  }
+}
