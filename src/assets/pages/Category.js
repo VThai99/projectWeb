@@ -31,7 +31,7 @@ export default function Category() {
     size: 9,
     totalElements: 10,
   });
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   useEffect(() => {
     getCategory();
   }, []);
@@ -106,7 +106,7 @@ export default function Category() {
         dispatch({
           type: "ADDTOCART",
           newItem: item,
-          quantity: 1
+          quantity: 1,
         });
         Swal.fire("Buy!", "See in your cart.", "success");
       }
@@ -170,14 +170,27 @@ export default function Category() {
                                                 <p className="font-22 text-gr600 font-medium">
                                                   Giá :{item.price} đ
                                                 </p>
-                                                <Button
-                                                  variant="y600"
-                                                  className="btw-130 btn-square font-11"
-                                                  onClick={()=> addToCart(item)}
-                                                >
-                                                  Thêm vào giỏ hàng
-                                                </Button>
                                               </Card.Body>
+                                              <Button
+                                                variant={
+                                                  item.inventory >= 1
+                                                    ? "y600"
+                                                    : "secondary"
+                                                }
+                                                className="w-100 btn-square font-11"
+                                                disabled={
+                                                  item.inventory >= 1
+                                                    ? false
+                                                    : true
+                                                }
+                                                onClick={() => {
+                                                  addToCart(item);
+                                                }}
+                                              >
+                                                {item.inventory >= 1
+                                                  ? "Thêm vào giỏ hàng"
+                                                  : "Hết hàng"}
+                                              </Button>
                                             </Card>
                                           </>
                                         )}
