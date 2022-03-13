@@ -38,7 +38,6 @@ export default function Author() {
   }, []);
   function getCategory() {
     AuthorService.getList().then((res) => {
-      console.log(res.data[0]);
       setAuthor(res.data);
       setAuthorActive(res.data[0].name);
     });
@@ -52,8 +51,7 @@ export default function Author() {
     let a = [];
     home.getListBook().then((res) => {
       res.data.map((item) => {
-        console.log(item.authors.length && item.authors[0].name);
-        if (item.types.length && item.authors[0].name == authorActive) {
+        if (item.types.length && item.authors[0]?.name == authorActive) {
           a.push(item);
         }
       });
@@ -108,7 +106,6 @@ export default function Author() {
     setData(a);
   }
   function handlePaging(number) {
-    console.log(number);
     setPage({
       ...Page,
       number: number,

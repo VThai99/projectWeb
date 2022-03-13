@@ -6,7 +6,7 @@ import ValidateAuth from '../common/settings/ValidateAuth'
 
 export default function DefaultLayout() {
   return (
-    <div className="shopmobile-main">
+    <div className="shopbook-main">
     <ValidateAuth/>
     <Header />
     <Routes />
