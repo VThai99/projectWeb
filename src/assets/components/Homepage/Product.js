@@ -39,12 +39,9 @@ export default function Product({ books }) {
         dispatch({
           type: "ADDTOCART",
           newItem: item,
+          quantity: 1
         });
-        Swal.fire(
-          "Buy!",
-          "See in your cart.",
-          "success"
-        );
+        Swal.fire("Buy!", "See in your cart.", "success");
       }
     });
   };
@@ -61,8 +58,8 @@ export default function Product({ books }) {
                 index < limit && (
                   <div>
                     <Card className="card-product">
-                      <NavLink to="/product-detail">
-                        <Card.Img className="p-2" variant="top" src={Banner} />{" "}
+                      <NavLink to={`/product-detail/${item.id}`}>
+                        <Card.Img className="p-2" variant="top" src={item.imagePath} />{" "}
                       </NavLink>
                       <div
                         className="product_links__subbutton"
@@ -94,6 +91,9 @@ export default function Product({ books }) {
               );
             })}
           </div>
+          <div className="d-flex justify-content-center align-items-center mt-4">
+            <Button className="form-control w-25" variant="info" onClick={()=>setLimit(limit + 8)}>Xem thêm</Button>
+          </div>
         </div>
       </div>
       <Modal
@@ -106,7 +106,7 @@ export default function Product({ books }) {
       >
         <div className="grid grid-flow-col grid-cols-2 grid-rows-1 gap-4">
           <div className="image">
-            <Image src={Banner} alt="banner" />
+            <Image src={bookdata.imagePath} alt="banner" />
           </div>
           <div className="text-detail mt-5 ">
             <p className="font-22 font-medium">Truyện : Tư Phàm</p>

@@ -41,11 +41,7 @@ export default function Header() {
           <div className="header_item_right col-4">
             <div>
               <NavLink to="/" className="header_search">
-                <Link to="/Search">Search</Link>
-              </NavLink>
-
-              <NavLink to="/" className="header_search">
-                <Link to="/Account">Account</Link>
+                <Link to="/account">Account</Link>
               </NavLink>
 
               <NavLink to="/cart" className="header_search">
