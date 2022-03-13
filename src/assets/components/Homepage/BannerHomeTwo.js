@@ -2,56 +2,47 @@
 
 import React from "react";
 import { Button, Image } from "react-bootstrap";
-import Banner from "../../Images/Banner3.jpeg";
-import Banner3 from "../../Images/Banner5.jpeg";
+import Slider from "react-slick";
+import img1 from '../../Images/1588654894-784901682-banner-h-i-sach.jpg'
+import img2 from '../../Images/banner_main.png'
+import img3 from '../../Images/cropped-banner.jpg'
+import img4 from '../../Images/dich-vu-ke-kiem-uy-tin.jpeg'
+import img5 from '../../Images/mau-banner-quang-cao-khuyen-mai.jpg'
+const content = [
+  {
+    image: img1,
+  },
+  {
+    image: img2,
+  },
+  {
+    image: img3,
+  },
+  {
+    image: img4,
+  },
+  {
+    image: img5,
+  },
+];
 export default function BannerHomeTwo() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    autoplaySpeed: 5000,
+    cssEase: "linear",
+  };
   return (
-    <div>
-      <div className="container_big">
-        <h3 className="font-30 text-gr600 text-start ml-2 my-5">
-          O Sách giảm giá
-        </h3>
-        <div className="row">
-          <div className="col-4">
-            <div className="ml-1 image_h700 relative">
-              <Image src={Banner} alt="banner" />
-              <div className="banner_text_left">
-                <div className="caption_text_1">
-                  <h3 className="font-md-42 font-22">Sách hay mỗi ngày</h3>
-                  <p className="text-g600">Mua đi còn chần trừ gì nữa!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="image_h700 relative">
-              <Image src={Banner3} alt="banner" className="relative" />
-              <div className="banner_text_center">
-                <div className="text-center">
-                  <h4 className="font-22 text-white">Giảm giá Up to 59%</h4>
-                  <h3 className="font-md-60 font-22 text-white uppercase">
-                    BIG SALE **
-                  </h3>
-                  <p className="font-18 text-white">
-                    Mua ngay những quyển sách giá trị cho mình và bạn bè!
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-4">
-            <div className="image_h700 relative">
-              <Image src={Banner} alt="banner" />
-              <div className="banner_text_left">
-                <div className="caption_text_1">
-                  <h3 className="font-md-42 font-22">Ngày hội sách </h3>
-                  <p className="text-g600">Số lượng có hạn!</p>
-                </div>
-              </div>
-            </div>
-          </div>
+    <Slider {...settings}>
+      {content.map((item, index) => (
+        <div className="d-flex justify-content-center align-items-center">
+          <img src={item.image} alt="" style={{height: '600px', width: '100vw', objectFit: 'cover'}}/>
         </div>
-      </div>
-    </div>
+      ))}
+    </Slider>
   );
 }

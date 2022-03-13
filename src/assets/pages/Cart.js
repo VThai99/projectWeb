@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2";
 import { cart } from "../../services/cart";
+import { customer } from "../../services/customer";
 import emptyCart from "../Images/empty-cart.gif";
 
 export default function Cart() {
@@ -17,6 +18,21 @@ export default function Cart() {
   const count = useSelector((state) => state.numberCart);
   const dispatch = useDispatch();
   const history = useHistory();
+  const nameOld = localStorage.getItem("user_name");
+  const [userData, setUser] = useState({});
+  useEffect(() => {
+    getUser();
+  }, []);
+  function getUser() {
+    customer.getlist().then((res) => {
+      for (const key in res.data) {
+        if (res.data[key]?.username == nameOld) {
+          var a = res.data[key];
+        }
+      }
+      setUser(a);
+    });
+  }
   const orderSuccess = () => {
     console.log(product);
     var listBookArray = [];
@@ -32,19 +48,35 @@ export default function Cart() {
     }
     var dataOrder = {
       id: 0,
-      staffId: 0,
-      customerId: 0,
-      codeId: 0,
-      basePrice: 0,
-      promotion: 0,
-      totalPrice: totalMoney,
+      staffId: null,
+      customerId: userData.id,
+      codeId: discountPercent ? discountPercent.id : null,
+      basePrice: totalMoney,
+      promotion: discountPercent ? discountPercent.promotionPercent : null,
+      totalPrice:
+        totalMoney -
+        parseFloat(
+          (totalMoney * discountPercent
+            ? discountPercent.promotionPercent
+            : 0) / 100
+        ),
       createdAt: "2022-03-11T14:52:11.671Z",
       status: "string",
       listBook: listBookArray,
     };
-    console.log("====================================");
-    console.log(dataOrder);
-    console.log("====================================");
+    cart.createOrder(dataOrder).then((res) => {
+      if (res.status == 200) {
+        Swal.fire("Success!", `Order Success`, "success").then((response) => {
+          localStorage.removeItem("cart");
+          localStorage.removeItem("count");
+          for (const key in product) {
+            removeItem(product[key].product.id);
+          }
+        });
+      } else {
+        Swal.fire("Fail", "Order Fail", "error");
+      }
+    });
   };
   useEffect(() => {
     const getTotal = () => {
@@ -75,37 +107,37 @@ export default function Cart() {
   const formatMoney = (value) => {
     return value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
   };
-  const updateQuantity = async (e, id) => {
+  const updateQuantity = (e, idItem) => {
     if (e.target.value === "") {
       e.target.value = 0;
     }
     let quantity = e.target.value;
     if (quantity === "0") {
-      removeItem(id);
+      removeItem(idItem);
     }
     dispatch({
       type: "UPDATEQUANTITY",
-      id: id,
+      id: idItem,
       updateQuantity: quantity,
     });
   };
   function handleCheckCode() {
-    var discount = 0;
+    var discount = {};
     for (const key in promotionList) {
       if (promotionList[key].code == code) {
-        discount = promotionList[key].promotionPercent;
+        discount = promotionList[key];
       }
     }
-    if (discount != 0) {
+    if (!discount.promotionPercent) {
+      Swal.fire("Wrong!", `Your code is invalid`, "warning");
+    } else {
       Swal.fire(
         "Success!",
-        `Your discount is ${discount} percent`,
+        `Your discount is ${discount.promotionPercent} percent`,
         "success"
       ).then((response) => {
         setDiscount(discount);
       });
-    } else {
-      Swal.fire("Wrong!", `Your code is invalid`, "warning");
     }
   }
   return (
@@ -146,7 +178,8 @@ export default function Cart() {
                           min="0"
                           defaultValue={item.quantity}
                           onChange={(e) => {
-                            updateQuantity(e, item.product.id);
+                            var a = item.product.id;
+                            updateQuantity(e, a);
                           }}
                         />
                       </div>
@@ -227,12 +260,19 @@ export default function Cart() {
             </div>
             <div className="flex justify-between">
               <p className="font-16 font-semibold m-0">Giảm giá:</p>
-              <p className="font-14 text-r300 m-0">{discountPercent} %</p>
+              <p className="font-14 text-r300 m-0">
+                {discountPercent.promotionPercent} %
+              </p>
             </div>
             <div className="flex justify-between">
               <p className="font-16 font-semibold m-0">Thành tiền:</p>
               <p className="font-14 text-r300 m-0">
-                {formatMoney(totalMoney - (totalMoney * discountPercent) / 100)}{" "}
+                {discountPercent.promotionPercent
+                  ? formatMoney(
+                      totalMoney -
+                        (totalMoney * discountPercent.promotionPercent) / 100
+                    )
+                  : formatMoney(totalMoney)}
                 đ
               </p>
             </div>

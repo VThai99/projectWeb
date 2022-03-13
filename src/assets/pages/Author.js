@@ -1,25 +1,19 @@
 /** @format */
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Breadcrumb,
   Button,
-  Card,
-  Image,
-  Modal,
-  Pagination,
-  Tab,
-  Tabs,
+  Card, Tab,
+  Tabs
 } from "react-bootstrap";
-import { Link, NavLink } from "react-router-dom";
-import img1 from "../Images/Banner3.jpeg";
-
-import { CategoryService } from "../../services/CategoryService";
-import { home } from "../../services/home";
-import { AuthorService } from "../../services/AuthorService";
-import PaginationSection from "../common/PaginationSection";
-import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthorService } from "../../services/AuthorService";
+import { home } from "../../services/home";
+import PaginationSection from "../common/PaginationSection";
+
 export default function Author() {
   const dispatch = useDispatch();
   const [authorData, setAuthor] = useState([]);
@@ -170,16 +164,27 @@ export default function Author() {
                                                 <p className="font-22 text-gr600 font-medium">
                                                   Giá :{item.price} đ
                                                 </p>
-                                                <Button
-                                                  variant="y600"
-                                                  className="btw-130 btn-square font-11"
-                                                  onClick={() =>
-                                                    addToCart(item)
-                                                  }
-                                                >
-                                                  Thêm vào giỏ hàng
-                                                </Button>
                                               </Card.Body>
+                                              <Button
+                                                variant={
+                                                  item.inventory >= 1
+                                                    ? "y600"
+                                                    : "secondary"
+                                                }
+                                                className="w-100 btn-square font-11"
+                                                disabled={
+                                                  item.inventory >= 1
+                                                    ? false
+                                                    : true
+                                                }
+                                                onClick={() => {
+                                                  addToCart(item);
+                                                }}
+                                              >
+                                                {item.inventory >= 1
+                                                  ? "Thêm vào giỏ hàng"
+                                                  : "Hết hàng"}
+                                              </Button>
                                             </Card>
                                           </>
                                         )}
