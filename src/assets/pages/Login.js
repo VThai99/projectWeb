@@ -3,16 +3,19 @@ import "../scss/login.css";
 import { useHistory } from "react-router-dom";
 import { auth } from "../../services/auth";
 import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
 export default function Login() {
-  const [userName, setUserName] = useState("");
-  const [pass, setPass] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
-  const [userNameRegis, setUserNameRegis] = useState("");
-  const [password, setPassword] = useState("");
   const history = useHistory();
+  const [type, setType] = useState("login");
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    setValue,
+    getValues,
+    setError,
+    reset
+  } = useForm();
   useEffect(() => {
     const signupButton = document.getElementById("signup-button"),
       loginButton = document.getElementById("login-button"),
@@ -22,6 +25,7 @@ export default function Login() {
       () => {
         userForms.classList.remove("bounceRight");
         userForms.classList.add("bounceLeft");
+        setType('')
       },
       false
     );
@@ -30,6 +34,7 @@ export default function Login() {
       () => {
         userForms.classList.remove("bounceLeft");
         userForms.classList.add("bounceRight");
+        setType("login");
       },
       false
     );
@@ -40,34 +45,43 @@ export default function Login() {
       history.push("/");
     }
   }, []);
-  function handleLogin() {
-    var dataLogin = {
-      userName: userName,
-      password: pass,
-    };
-    auth.login(dataLogin).then((res) => {
-      if (res.status === 200) {
-        localStorage.setItem("access_token", res.data.token);
-        localStorage.setItem("user_name", res.data.userName)
-        history.push("/");
-      }
-      else{
-        Swal.fire("FAIl!", "SOME THING WRONG!", "warning");
-      }
-    });
-  }
-  function handleSignUp() {
-    var dataSignup = {
-      name: name,
-      phone: phone,
-      address: address,
-      email: email,
-      username: userNameRegis,
-      password: password,
-    };
-    auth.signup(dataSignup).then((res) => {
-      Swal.fire("Good job!", "Create account success!", "success");
-    });
+  function handleLoginOrSubmit(data) {
+    if (type == "login") {
+      var dataLogin = {
+        userName: data.userName,
+        password: data.pass,
+      };
+      auth.login(dataLogin).then((res) => {
+        if (res.status === 200) {
+          localStorage.setItem("access_token", res.data.token);
+          localStorage.setItem("user_name", res.data.userName);
+          history.push("/");
+        } else {
+          Swal.fire("FAIl!", "SOME THING WRONG!", "warning");
+        }
+      });
+    } else {
+      var dataSignup = {
+        name: data.name,
+        phone: data.phone,
+        address: data.address,
+        email: data.email,
+        username: data.userNameRegis,
+        password: data.password,
+      };
+      auth.signup(dataSignup).then((res) => {
+        Swal.fire("Good job!", "Create account success!", "success").then(
+          (response) => {
+            if (response) {
+              const userForms = document.getElementById("user_options-forms");
+              userForms.classList.remove("bounceLeft");
+              userForms.classList.add("bounceRight");
+              reset()
+            }
+          }
+        );
+      });
+    }
   }
   return (
     <section className="user">
@@ -91,114 +105,178 @@ export default function Login() {
             </button>
           </div>
         </div>
+        <form
+          className="forms_form"
+          onSubmit={handleSubmit(handleLoginOrSubmit)}
+        >
+          <div className="user_options-forms" id="user_options-forms">
+            <div className="user_forms-login">
+              <h2 className="forms_title">Login</h2>
 
-        <div className="user_options-forms" id="user_options-forms">
-          <div className="user_forms-login">
-            <h2 className="forms_title">Login</h2>
-            <form className="forms_form">
               <fieldset className="forms_fieldset">
                 <div className="forms_field">
                   <input
                     type="text"
                     placeholder="UserName"
                     className="forms_field-input"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                    required
-                    autofocus
+                    {...register("userName", {
+                      required: {
+                        value: type == "login" ? true : false,
+                        message: "Please input your user name",
+                      },
+                    })}
                   />
+                  {errors.userName && (
+                    <p className="text-danger text-sm">
+                      {errors.userName?.message}
+                    </p>
+                  )}
                 </div>
                 <div className="forms_field">
                   <input
                     type="password"
                     placeholder="Password"
                     className="forms_field-input"
-                    value={pass}
-                    onChange={(e) => setPass(e.target.value)}
-                    required
+                    {...register("pass", {
+                      required: {
+                        value: type == "login" ? true : false,
+                        message: "Please input your password",
+                      },
+                    })}
                   />
+                  {errors.pass && (
+                    <p className="text-danger text-sm">
+                      {errors.pass?.message}
+                    </p>
+                  )}
                 </div>
               </fieldset>
-            </form>
-            <div className="forms_buttons">
-              <button onClick={handleLogin} className="forms_buttons-action">
-                Log In
-              </button>
+              <div className="forms_buttons">
+                <button type="submit" className="forms_buttons-action">
+                  Log In
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="user_forms-signup">
-            <h2 className="forms_title">Sign Up</h2>
-            <form className="forms_form">
+            <div className="user_forms-signup">
+              <h2 className="forms_title">Sign Up</h2>
               <fieldset className="forms_fieldset">
                 <div className="forms_field">
                   <input
                     type="text"
                     placeholder="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    {...register("name", {
+                      required: {
+                        value: type == "login" ? false : true,
+                        message: "Please input your name",
+                      },
+                    })}
                     className="forms_field-input"
-                    required
                   />
+                  {errors.name && (
+                    <p className="text-danger text-sm">
+                      {errors.name?.message}
+                    </p>
+                  )}
                 </div>
                 <div className="forms_field">
                   <input
                     type="text"
                     placeholder="Username"
-                    value={userNameRegis}
-                    onChange={(e) => setUserNameRegis(e.target.value)}
+                    {...register("userNameRegis", {
+                      required: {
+                        value: type == "login" ? false : true,
+                        message: "Please input your user name",
+                      },
+                    })}
                     className="forms_field-input"
-                    required
                   />
+                  {errors.userNameRegis && (
+                    <p className="text-danger text-sm">
+                      {errors.userNameRegis?.message}
+                    </p>
+                  )}
                 </div>
                 <div className="forms_field">
                   <input
                     type="text"
                     placeholder="Phone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
                     className="forms_field-input"
-                    required
+                    {...register("phone", {
+                      required: {
+                        value: type == "login" ? false : true,
+                        message: "Please input your phone",
+                      },
+                    })}
                   />
+                  {errors.phone && (
+                    <p className="text-danger text-sm">
+                      {errors.phone?.message}
+                    </p>
+                  )}
                 </div>
                 <div className="forms_field">
                   <input
                     type="text"
                     placeholder="Address"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
                     className="forms_field-input"
-                    required
-                  />
+                    {...register("address", {
+                      required: {
+                        value: type == "login" ? false : true,
+                        message: "Please input your address",
+                      },
+                    })}
+                  />{" "}
+                  {errors.address && (
+                    <p className="text-danger text-sm">
+                      {errors.address?.message}
+                    </p>
+                  )}
                 </div>
                 <div className="forms_field">
                   <input
                     type="email"
                     placeholder="Email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    {...register("email", {
+                      required: {
+                        value: type == "login" ? false : true,
+                        message: "Please input your email",
+                      },
+                    })}
                     className="forms_field-input"
-                    required
                   />
+                  {errors.email && (
+                    <p className="text-danger text-sm">
+                      {errors.email?.message}
+                    </p>
+                  )}
                 </div>
                 <div className="forms_field">
                   <input
                     type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="Password"
                     className="forms_field-input"
-                    required
+                    {...register("password", {
+                      required: {
+                        value: type == "login" ? false : true,
+                        message: "Please input your password",
+                      },
+                    })}
                   />
+                  {errors.password && (
+                    <p className="text-danger text-sm">
+                      {errors.password?.message}
+                    </p>
+                  )}
                 </div>
               </fieldset>
-            </form>{" "}
-            <div className="forms_buttons">
-              <button onClick={handleSignUp} className="forms_buttons-action">
-                Sign Up
-              </button>
+              <div className="forms_buttons">
+                <button type="submit" className="forms_buttons-action">
+                  Sign Up
+                </button>
+              </div>
             </div>
-          </div>
-        </div>
+          </div>{" "}
+        </form>
       </div>
     </section>
   );

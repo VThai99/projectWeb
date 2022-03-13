@@ -37,6 +37,7 @@ export default function Account() {
   }
   function onsubmit(data) {
     data.id = userData.id;
+    data.password = userData.password;
     customer.update(data).then((res) => {
       if (res.status === 200) {
         Swal.fire("Done!", "Update success.", "success").then((response) => {
@@ -55,7 +56,7 @@ export default function Account() {
           <Form className="" onSubmit={handleSubmit(onsubmit)}>
             {userData.name && (
               <Form.Group>
-                <Form.Label>Name</Form.Label>
+                <Form.Label className="fs-6 text-info">Name</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Name"
@@ -69,7 +70,7 @@ export default function Account() {
             )}
             {userData.username && (
               <Form.Group controlId="UserName">
-                <Form.Label>UserName</Form.Label>
+                <Form.Label  className="fs-6 text-info">UserName</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="UserName"
@@ -83,7 +84,7 @@ export default function Account() {
             )}
             {userData.email && (
               <Form.Group controlId="email">
-                <Form.Label>Email</Form.Label>
+                <Form.Label className="fs-6 text-info">Email</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Email"
@@ -97,7 +98,7 @@ export default function Account() {
             )}
             {userData.phone && (
               <Form.Group controlId="phone">
-                <Form.Label>Phone</Form.Label>
+                <Form.Label className="fs-6 text-info">Phone</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Phone"
@@ -111,27 +112,13 @@ export default function Account() {
             )}
             {userData.address && (
               <Form.Group controlId="address">
-                <Form.Label>Address</Form.Label>
+                <Form.Label className="fs-6 text-info">Address</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Address"
                   className=""
                   {...register("address", {
                     value: userData.address,
-                  })}
-                />
-              </Form.Group>
-            )}
-            {userData.password && (
-              <Form.Group controlId="Password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="Password"
-                  placeholder="Password"
-                  className=""
-                  {...register("password", {
-                    value: userData.password,
-                    required: true,
                   })}
                 />
               </Form.Group>
