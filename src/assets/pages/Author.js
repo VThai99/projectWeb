@@ -158,7 +158,7 @@ export default function Author() {
                                                 <p className="font-medium  mb-0">
                                                   <small>
                                                     Tác giả -{" "}
-                                                    {item.authors[0].name}
+                                                    {item.authors[0]?.name}
                                                   </small>
                                                 </p>
                                                 <p className="font-22 text-gr600 font-medium">

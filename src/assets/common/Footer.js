@@ -14,6 +14,7 @@ export default function Footer() {
     history.push("/privacy-policy");
   };
   const contact = () => {
+    console.log("aa");
     history.push("/contact-us");
   };
   return (
@@ -42,8 +43,6 @@ export default function Footer() {
               <h6 className="mb-3">Thông tin của chúng tôi</h6>
               <ul className="text-g200">
                 <li onClick={privacy}>Điều khoản và dịch vụ</li>
-
-                <li>About Us</li>
                 <li onClick={contact}>liên hệ chúng tôi</li>
               </ul>
             </div>
