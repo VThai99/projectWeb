@@ -46,8 +46,14 @@ export default function Login() {
       password: pass,
     };
     auth.login(dataLogin).then((res) => {
-      localStorage.setItem("access_token", res.data.token);
-      history.push("/");
+      if (res.status === 200) {
+        localStorage.setItem("access_token", res.data.token);
+        localStorage.setItem("user_name", res.data.userName)
+        history.push("/");
+      }
+      else{
+        Swal.fire("FAIl!", "SOME THING WRONG!", "warning");
+      }
     });
   }
   function handleSignUp() {

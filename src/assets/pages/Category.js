@@ -16,6 +16,8 @@ import img1 from "../Images/Banner3.jpeg";
 import PaginationSection from "../common/PaginationSection";
 import { CategoryService } from "../../services/CategoryService";
 import { home } from "../../services/home";
+import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
 
 export default function Category() {
   const [category, setCategory] = useState([]);
@@ -29,6 +31,7 @@ export default function Category() {
     size: 9,
     totalElements: 10,
   });
+  const dispatch = useDispatch()
   useEffect(() => {
     getCategory();
   }, []);
@@ -89,6 +92,26 @@ export default function Category() {
       number: number,
     });
   }
+  const addToCart = (item) => {
+    Swal.fire({
+      title: "Do you want to buy this book?",
+      icon: "question",
+      iconHtml: "?",
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
+      showCancelButton: true,
+      showCloseButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch({
+          type: "ADDTOCART",
+          newItem: item,
+          quantity: 1
+        });
+        Swal.fire("Buy!", "See in your cart.", "success");
+      }
+    });
+  };
   return (
     <div>
       {category && data && (
@@ -150,6 +173,7 @@ export default function Category() {
                                                 <Button
                                                   variant="y600"
                                                   className="btw-130 btn-square font-11"
+                                                  onClick={()=> addToCart(item)}
                                                 >
                                                   Thêm vào giỏ hàng
                                                 </Button>

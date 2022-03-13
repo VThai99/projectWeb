@@ -13,7 +13,17 @@ import ReactReadMoreReadLess from "react-read-more-read-less";
 import { useHistory, useParams } from "react-router";
 
 import Banner from "../Images/Banner3.jpeg";
+import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
+import Rate from "../components/Rate/Rate";
+import { commentService } from "../../services/commentService";
+import UserImage from "../Images/user.jpg";
+
 export default function ProductDetail() {
+  const [rating, setRating] = useState(0);
+  const [moreComment, setMoreComment] = useState(5);
+  const [comment, setComment] = useState("");
+  const dispatch = useDispatch();
   let { id } = useParams();
   const history = useHistory();
   const Cart = () => {
@@ -22,8 +32,10 @@ export default function ProductDetail() {
   const [data, setData] = useState([]);
   const [athur, setathur] = useState();
   const [count, setCount] = useState(1);
+  const [commentList, setCommentList] = useState([]);
   useEffect(() => {
     getData();
+    getComment();
   }, []);
   function getData() {
     ProductDetailService.getDetail(id).then((response) => {
@@ -34,10 +46,58 @@ export default function ProductDetail() {
       }
     });
   }
+  function getComment() {
+    commentService.getComment().then((res) => {
+      var arrayComment = [];
+      for (const key in res.data) {
+        if (res.data[key].bookId == id) {
+          arrayComment.push(res.data[key]);
+        }
+      }
+      setCommentList(arrayComment);
+    });
+  }
   function editSetCount(e) {
     const x = Number(e.target.value);
     isNaN(x) ? setCount(1) : setCount(x);
   }
+  const addToCart = (item) => {
+    Swal.fire({
+      title: "Do you want to buy this book?",
+      icon: "question",
+      iconHtml: "?",
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
+      showCancelButton: true,
+      showCloseButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch({
+          type: "ADDTOCART",
+          newItem: item,
+          quantity: count,
+        });
+        Swal.fire("Buy!", "See in your cart.", "success");
+      }
+    });
+  };
+  const handleComment = () => {
+    var dataComment = {
+      id: 0,
+      bookId: data.id.toString(),
+      bookName: data.name,
+      comment: comment,
+      vote: rating,
+    };
+    commentService.createComment(dataComment).then((res) => {
+      setRating(0);
+      setComment("");
+      getComment();
+    });
+  };
+  const handleMoreComment = () => {
+    setMoreComment(moreComment + 3);
+  };
   return (
     <div>
       <div className="product-detail-page">
@@ -117,13 +177,12 @@ export default function ProductDetail() {
               <Button
                 variant="r200"
                 className="btn-square w-75 btn-buy-now mt-4"
-                onClick={Cart}
+                onClick={() => {
+                  addToCart(data);
+                }}
                 disabled={data.inventory === 0}
               >
                 <h3 className="uppercase font-20">Mua ngay</h3>
-                <p className="font-13 m-0">
-                  Giao hàng miễn phí hoặc nhận tại shop
-                </p>
               </Button>
             </div>
           </div>
@@ -138,103 +197,65 @@ export default function ProductDetail() {
                   O Đánh giá chi tiết : Nhật kí cầu nguyện hàng ngày
                 </h3>
                 <br />
-                {/* <ReactReadMoreReadLess
-                  charLimit={200}
-                  readMoreText={"Đọc tiếp ▼"}
-                  readLessText={"Thu lại ▲"}
-                  readMoreClassName="read-more-less--more"
-                  readLessClassName="read-more-less--less"
-                >
-                  <p></p>
-                </ReactReadMoreReadLess> */}
                 <p className="pl-5"> {data.description}</p>
               </div>
             </div>
           </div>
-          {/* <div className="box-answer-comment mt-5">
-            <p className="font-20 font-medium">Hỏi & Đáp về sản phẩm</p>
+          <div className="box-answer-comment mt-5">
+            <p className="font-20 font-medium">
+              Bình luân & Đánh giá về sản phẩm
+            </p>
             <>
               <FloatingLabel controlId="floatingTextarea" className="relative">
+                ĐÁNH GIÁ:{" "}
+                <Rate id={data.id} rating={rating} setRating={setRating}></Rate>
                 <Form.Control
                   as="textarea"
-                  placeholder="Câu hỏi"
+                  placeholder="Bình luận"
                   style={{ height: "80px" }}
                   className="textarea-comment"
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
                 />
                 <Button
                   variant="r200"
                   className="btn-evaluate btn-square btw-130 col-4 col-md-2"
+                  onClick={handleComment}
                 >
                   <p className="font-13">Gửi đánh giá</p>
                 </Button>
               </FloatingLabel>
             </>
-            <div className="box-c-user-comment grid grid-cols-12 gap-6">
-              <div className="avatar col-span-12 md:col-span-2 lg:col-span-1">
-                <Image  alt="banner" />
-              </div>
-              <div className="c-comment-box__content col-span-12 md:col-span-10 lg:col-span-11">
-                <p className="font-18 m-0">
-                  Người dùng{" "}
-                  <span className="font-14 text-g200 ml-2">1 ngày trước</span>
-                </p>{" "}
-                <p className="font-16 text-g100 m-0">
-                  Sách rất hay !! Yêu thương
-                </p>
-                <Button variant="link" className="btn-square btw-65-answer">
-                  <p className="font-14">Trả lời</p>
-                </Button>
-                <>
-                  <FloatingLabel
-                    controlId="floatingTextarea"
-                    className="relative"
+            {commentList.map((item, index) => {
+              return (
+                index < moreComment && (
+                  <div
+                    className="box-c-user-comment grid grid-cols-12 gap-6"
+                    key={index}
                   >
-                    <Form.Control
-                      as="textarea"
-                      placeholder="Câu hỏi"
-                      style={{ height: "80px" }}
-                      className="textarea-comment"
-                    />
-                    <Button
-                      variant="r200"
-                      className="btn-evaluate btn-square btw-120 col-4 col-md-2"
-                    >
-                      <p className="font-13">Viết câu hỏi</p>
-                    </Button>
-                  </FloatingLabel>
-                </>
-              </div>
-            </div>
-            <div className="box-c-user-comment grid grid-cols-12 gap-6">
-              <div className="avatar col-span-12 md:col-span-2 lg:col-span-1">
-              <Image  alt="banner" />
-              </div>
-              <div className="c-comment-box__content col-span-12 md:col-span-10 lg:col-span-11">
-                <p className="font-18 m-0">
-                  Người dùng{" "}
-                  <span className="font-14 text-g200 ml-2">1 ngày trước</span>
-                </p>{" "}
-                <p className="font-16 text-g100 m-0">
-                  Sách rất hay !! Yêu thương
-                </p>
-                <Button variant="link" className="btn-square btw-65-answer">
-                  <p className="font-14">Trả lời</p>
-                </Button>
-                <div className="c-admin-comment">
-                  <p className="font-18 m-0 d-flex items-center">
-                    Admin
-                    <span className="text-admin font-10 ml-2">
-                      Quản trị viên
-                    </span>
-                    <span className="font-14 text-g200 ml-2">1 giờ trước</span>
-                  </p>{" "}
-                  <p className="font-16 text-g100 m-0">
-                    bạn có thể mua trước tiếp ở cửa hàng MobieX ở HN nhé
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> */}
+                    <div className="avatar col-span-12 md:col-span-2 lg:col-span-1">
+                      <Image alt="userImage" src={UserImage} />
+                    </div>
+                    <div className="c-comment-box__content col-span-12 md:col-span-10 lg:col-span-11">
+                      <p className="font-18 m-0">
+                        Người dùng
+                        <span className="font-14 text-g200 ml-2">{`${Math.floor(Math.random() * 60) + 1} phút trước`}</span>
+                      </p>
+                      <Rate rating={item.vote} disabled={true} />
+                      <p className="font-16 text-g100 m-0">{item.comment}</p>
+                    </div>
+                  </div>
+                )
+              );
+            })}
+            <span
+              onClick={handleMoreComment}
+              className="ml-4 font-light text-info"
+              style={{ cursor: "pointer", fontSize: "15px" }}
+            >
+              more comment
+            </span>
+          </div>
         </div>
       </div>
     </div>

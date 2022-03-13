@@ -6,6 +6,7 @@ import ProductDetail from "./assets/common/ProductDetail";
 import Demo from "./assets/components/Demo";
 import OrderSuccess from "./assets/components/OrderSuccess";
 import Accessory from "./assets/pages/Accessory";
+import Account from "./assets/pages/Account";
 import Author from "./assets/pages/Author";
 import Cart from "./assets/pages/Cart";
 import Catalog from "./assets/pages/Catalog";
@@ -46,6 +47,9 @@ export default function Routes() {
         </Route>{" "}
         <Route path="/privacy-policy">
           <Privacy />
+        </Route>
+        <Route path="/account">
+          <Account />
         </Route>
         <Route path="/">
           <Homepage />

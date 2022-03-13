@@ -18,7 +18,10 @@ import { CategoryService } from "../../services/CategoryService";
 import { home } from "../../services/home";
 import { AuthorService } from "../../services/AuthorService";
 import PaginationSection from "../common/PaginationSection";
+import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
 export default function Author() {
+  const dispatch = useDispatch();
   const [authorData, setAuthor] = useState([]);
   const [data, setData] = useState([]);
   const [authorActive, setAuthorActive] = useState([]);
@@ -65,7 +68,26 @@ export default function Author() {
       setBooks(res.data);
     });
   }
-
+  const addToCart = (item) => {
+    Swal.fire({
+      title: "Do you want to buy this book?",
+      icon: "question",
+      iconHtml: "?",
+      confirmButtonText: "Yes",
+      cancelButtonText: "No",
+      showCancelButton: true,
+      showCloseButton: true,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch({
+          type: "ADDTOCART",
+          newItem: item,
+          quantity: 1,
+        });
+        Swal.fire("Buy!", "See in your cart.", "success");
+      }
+    });
+  };
   function handleMoveTab(e) {
     let a = authorData[e].name;
     GetTabBook(a);
@@ -154,6 +176,9 @@ export default function Author() {
                                                 <Button
                                                   variant="y600"
                                                   className="btw-130 btn-square font-11"
+                                                  onClick={() =>
+                                                    addToCart(item)
+                                                  }
                                                 >
                                                   Thêm vào giỏ hàng
                                                 </Button>
