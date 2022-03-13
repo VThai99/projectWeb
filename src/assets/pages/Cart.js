@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2";
 import { cart } from "../../services/cart";
-import Banner from "../Images/Banner1.jpeg";
+import emptyCart from "../Images/empty-cart.gif";
 
 export default function Cart() {
   const product = useSelector((state) => state.Cart);
@@ -111,55 +111,87 @@ export default function Cart() {
   return (
     <div className="cart-page">
       <div className="box-cart">
-        <div className="px-4 py-4">
-          {product.map((item, index) => {
-            return (
-              <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-3 md:col-span-2">
-                  <div className="cart-image-product">
-                    <Image src={item.product.imagePath} alt="image" />
+        {count >= 1 ? (
+          <div className="px-4 py-4">
+            {product.map((item, index) => {
+              return (
+                <div className="grid grid-cols-12 gap-4">
+                  <div className="col-span-3 md:col-span-2">
+                    <div className="cart-image-product">
+                      <Image src={item.product.imagePath} alt="image" />
+                    </div>
                   </div>
-                </div>
-                <div className="col-span-9 md:col-span-10">
-                  <div className="flex justify-between items-center">
-                    <h4 className="font-14 font-medium m-0">
-                      {item.product.name}
-                    </h4>
-                    <p className="font-14 text-r300 m-0">
-                      Giá: {formatMoney(item.product.price)}đ{" "}
-                      <Button
-                        color="danger"
-                        variant="contained"
-                        onClick={() => removeItem(item.product.id)}
-                      >
-                        X
-                      </Button>
-                    </p>
-                  </div>
-                  <div className="flex justify-between my-3">
-                    <div className="choosenumber">
-                      <span className="font-14 text-r300 p-0">Số lượng:</span>
-                      <input
-                        type="number"
-                        className="form-control w-50 ml-3 font-weight-bold  font-italic"
-                        min="0"
-                        defaultValue={item.quantity}
-                        onChange={(e) => {
-                          updateQuantity(e, item.product.id);
-                        }}
-                      />
+                  <div className="col-span-9 md:col-span-10">
+                    <div className="flex justify-between items-center">
+                      <h4 className="font-14 font-medium m-0">
+                        {item.product.name}
+                      </h4>
+                      <p className="font-14 text-r300 m-0">
+                        Giá: {formatMoney(item.product.price)}đ{" "}
+                        <Button
+                          color="danger"
+                          variant="contained"
+                          onClick={() => removeItem(item.product.id)}
+                        >
+                          X
+                        </Button>
+                      </p>
+                    </div>
+                    <div className="flex justify-between my-3">
+                      <div className="choosenumber">
+                        <span className="font-14 text-r300 p-0">Số lượng:</span>
+                        <input
+                          type="number"
+                          className="form-control w-50 ml-3 font-weight-bold  font-italic"
+                          min="0"
+                          defaultValue={item.quantity}
+                          onChange={(e) => {
+                            updateQuantity(e, item.product.id);
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
 
-          <div className="flex justify-between mt-5">
-            <p className="font-14">Tạm tính ({count} sản phẩm):</p>
-            <p className="font-14 text-r300 p-0">{formatMoney(totalMoney)}đ</p>
+            <div className="flex justify-between mt-5">
+              <p className="font-14">Tạm tính ({count} sản phẩm):</p>
+              <p className="font-14 text-r300 p-0">
+                {formatMoney(totalMoney)}đ
+              </p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div style={{ position: "relative" }} className="py-4">
+            <img src={emptyCart} alt="" />
+            <span
+              style={{
+                position: "absolute",
+                right: "0px",
+                top: "0px",
+                borderRadius: "50%",
+                border: "1px solid red",
+                width: "90px",
+                height: "90px",
+                textAlign: "center",
+                background: "red",
+                cursor: "pointer",
+                fontSize: "16px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "blue",
+              }}
+              onClick={() => {
+                history.push("/");
+              }}
+            >
+              Mua hàng nào!
+            </span>
+          </div>
+        )}
         <div className="box-cart-detail ">
           <div className="uppercase mb-2"> Nhập mã giảm giá </div>
           <Form className="grid grid-rows-1 grid-flow-col gap-4">
@@ -168,6 +200,7 @@ export default function Cart() {
                 type="text"
                 placeholder="mã giảm giá"
                 value={code}
+                disabled={count >= 1 ? false : true}
                 onChange={(e) => {
                   setCode(e.target.value);
                 }}
@@ -178,6 +211,7 @@ export default function Cart() {
               <Button
                 variant="outline-secondary"
                 onClick={handleCheckCode}
+                disabled={code ? false : true}
                 className="btn-square w-100 font-14 uppercase font-bold"
               >
                 Check Code
@@ -205,6 +239,7 @@ export default function Cart() {
             <Button
               variant="submitorder"
               className="btn-square w-100 font-14 uppercase font-bold mt-3"
+              disabled={count >= 1 ? false : true}
               onClick={orderSuccess}
             >
               Đặt hàng

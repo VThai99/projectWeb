@@ -34,6 +34,7 @@ export default function ProductDetail() {
   const [count, setCount] = useState(1);
   const [commentList, setCommentList] = useState([]);
   useEffect(() => {
+    window.scrollTo(0, 0)
     getData();
     getComment();
   }, []);

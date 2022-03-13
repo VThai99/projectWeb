@@ -39,8 +39,9 @@ export default function Product({ books }) {
         dispatch({
           type: "ADDTOCART",
           newItem: item,
-          quantity: 1
+          quantity: 1,
         });
+        setShow(false);
         Swal.fire("Buy!", "See in your cart.", "success");
       }
     });
@@ -59,7 +60,11 @@ export default function Product({ books }) {
                   <div>
                     <Card className="card-product">
                       <NavLink to={`/product-detail/${item.id}`}>
-                        <Card.Img className="p-2" variant="top" src={item.imagePath} />{" "}
+                        <Card.Img
+                          className="p-2"
+                          variant="top"
+                          src={item.imagePath}
+                        />{" "}
                       </NavLink>
                       <div
                         className="product_links__subbutton"
@@ -75,14 +80,16 @@ export default function Product({ books }) {
                           {item.price} đ
                         </p>
                         <Button
-                          variant="y600"
+                          variant={item.inventory >= 1 ? "y600" : "secondary"}
                           className="btw-130 btn-square font-11"
                           disabled={item.inventory >= 1 ? false : true}
                           onClick={() => {
                             addToCart(item);
                           }}
                         >
-                          Thêm vào giỏ hàng
+                          {item.inventory >= 1
+                            ? "Thêm vào giỏ hàng"
+                            : "Hết hàng"}
                         </Button>
                       </Card.Body>
                     </Card>
@@ -92,7 +99,13 @@ export default function Product({ books }) {
             })}
           </div>
           <div className="d-flex justify-content-center align-items-center mt-4">
-            <Button className="form-control w-25" variant="info" onClick={()=>setLimit(limit + 8)}>Xem thêm</Button>
+            <Button
+              className="form-control w-25"
+              variant="info"
+              onClick={() => setLimit(limit + 8)}
+            >
+              Xem thêm
+            </Button>
           </div>
         </div>
       </div>
