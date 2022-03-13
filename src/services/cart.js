@@ -1,5 +1,5 @@
 import API from "../utils/API";
-const BASE_URL = "Sale";
+const BASE_URL = "api/Sale";
 const createOrder = (data) => {
   return API.post(`${BASE_URL}/CreateSaleOrder`, data);
 };

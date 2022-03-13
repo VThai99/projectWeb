@@ -1,4 +1,4 @@
-import { ADDTOCART, REMOVE, UPDATEQUANTITY } from "../actions";
+import { ADDTOCART, REMOVE, UPDATEQUANTITY, REMOVEALL } from "../actions";
 
 const countLocalStorage = JSON.parse(localStorage.getItem("count") || 0);
 const cart = JSON.parse(localStorage.getItem("cart") || "[]");
@@ -7,7 +7,6 @@ const intiCount = {
   Cart: cart,
 };
 function reducer(state = intiCount, action) {
-  console.log(action.newItem);
   switch (action.type) {
     case ADDTOCART:
       if (state.numberCart === 0) {
@@ -23,8 +22,9 @@ function reducer(state = intiCount, action) {
           if (item.product.id === action.newItem.id) {
             state.Cart[key].quantity =
               state.Cart[key].quantity + action.quantity;
-            state.Cart[key].total =
-              state.Cart[key].product.price * state.Cart[key].quantity;
+            state.Cart[key].total = parseFloat(
+              state.Cart[key].product.price * state.Cart[key].quantity
+            );
             check = true;
           }
           return "ok";
@@ -48,8 +48,9 @@ function reducer(state = intiCount, action) {
       state.Cart.map((item, key) => {
         if (item.product.id === action.id) {
           state.Cart[key].quantity = updateQuantity;
-          state.Cart[key].total =
-            state.Cart[key].price * state.Cart[key].quantity;
+          state.Cart[key].total = parseFloat(
+            state.Cart[key].product.price * state.Cart[key].quantity
+          );
         }
         return "ok";
       });
@@ -69,12 +70,13 @@ function reducer(state = intiCount, action) {
         }
         return "okk";
       });
-      console.log(numberMinus);
       return {
         ...state,
         Cart: state.Cart.filter((item) => item.product.id !== action.id),
         numberCart: state.numberCart - numberMinus[0].quantity,
       };
+    case REMOVEALL:
+      return state;
     default:
       return state;
   }
