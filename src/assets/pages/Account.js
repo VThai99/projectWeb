@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 import { customer } from "../../services/customer";
 
 export default function Account() {
+  
   const nameOld = localStorage.getItem("user_name");
   const {
     register,
@@ -52,6 +53,11 @@ export default function Account() {
   return (
     <div className="cart-page">
       <div className="box-cart">
+      <h3 className=" text-center pt-5">
+            {" "}
+           Tài khoản của tôi
+          </h3>
+
         <div className="px-4 py-4">
           <Form className="" onSubmit={handleSubmit(onsubmit)}>
             {userData.name && (
@@ -124,6 +130,9 @@ export default function Account() {
               </Form.Group>
             )}
             <div className="flex justify-content-around align-items-center m-3">
+              <Button variant="outline-primary"  type="text" className="px-3">
+               <Link to="/my-order"  style={{ color: "orange" }} >My order</Link> 
+              </Button>
               <Button variant="outline-primary" type="submit" className="px-3">
                 Update
               </Button>
