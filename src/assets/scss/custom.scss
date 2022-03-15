@@ -392,3 +392,31 @@
 .btn-background {
   background-color: #000;
 }
+.ct-order {
+  min-height: 60vh !important;
+}
+.ct-image-order {
+  width: 215x;
+  height: 300px;
+}
+.ct-header-order {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #7a7669;
+  border-radius: 15px;
+}
+.ct-order-ship {
+  background-color: #e0d315;
+  color : #ff1515;
+  border-radius: 5px;
+}
+.ct-order-completed {
+  background-color: #a8a8a8;
+  color :#fff;
+  border-radius: 5px;
+}
+.ct-add-order {
+  background-color: #d3b408;
+  color : #fff;
+  border-radius: 5px;
+}

@@ -52,7 +52,7 @@ export default function Product({ books }) {
             <FaBook className="mr-1" /> Sách
           </h3>
           <div className=" container grid grid-cols-1 md:grid-cols-4 gap-4">
-            {books.map((item, index) => {
+            {books?.map((item, index) => {
               return (
                 index < limit && (
                   <div>
@@ -118,7 +118,7 @@ export default function Product({ books }) {
             <Image src={bookdata.imagePath} alt="banner" />
           </div>
           <div className="text-detail mt-5 ">
-            <p className="font-22 font-medium">Truyện : Tư Phàm</p>
+            <p className="font-22 font-medium">Tên sách : {bookdata.name}</p>
             <p className="font-30 text-gr600 font-medium">
               Giá : {bookdata.price} đ
             </p>
@@ -130,6 +130,7 @@ export default function Product({ books }) {
             <h4 className="font-14 mt-5">Số Lượng: {bookdata.inventory}</h4>
             <div className="flex justify-between mt-3">
               <input
+                disabled={true}
                 className="ipw-120 height-44 text-center"
                 type="text"
                 id="fname"
