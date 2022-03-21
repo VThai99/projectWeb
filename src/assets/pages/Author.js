@@ -115,7 +115,7 @@ export default function Author() {
               <Breadcrumb>
                 <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
 
-                <Breadcrumb.Item active>Thể loại</Breadcrumb.Item>
+                <Breadcrumb.Item active>Tác giả</Breadcrumb.Item>
               </Breadcrumb>
 
               <div className="mt-5 mb-5">
