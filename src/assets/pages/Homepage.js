@@ -14,7 +14,9 @@ export default function Homepage() {
   }, []);
   function getBook() {
     home.getListBook().then((res) => {
+      if(res.status === 200) {
       setBooks(res.data);
+      }
     });
   }
   return (

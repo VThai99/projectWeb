@@ -6,7 +6,11 @@ const createOrder = (data) => {
 const getAllPromotion = () =>{
   return API.get("api/Promotion/GetListPromotion")
 }
+const getOrder= (id) =>{
+  return API.post(`${BASE_URL}/GetSaleForCustomer?customerId=${id}`)
+}
 export const cart = {
   createOrder,
-  getAllPromotion
+  getAllPromotion,
+  getOrder
 };

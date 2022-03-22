@@ -55,6 +55,7 @@ export default function Login() {
         if (res.status === 200) {
           localStorage.setItem("access_token", res.data.token);
           localStorage.setItem("user_name", res.data.userName);
+          localStorage.setItem("user_id", res.data.id)
           history.push("/");
         } else {
           Swal.fire("FAIl!", "SOME THING WRONG!", "warning");

@@ -23,6 +23,7 @@ export default function ProductDetail() {
   const [rating, setRating] = useState(0);
   const [moreComment, setMoreComment] = useState(5);
   const [comment, setComment] = useState("");
+  const userId = localStorage.getItem("user_id");
   const dispatch = useDispatch();
   let { id } = useParams();
   const history = useHistory();
@@ -34,7 +35,7 @@ export default function ProductDetail() {
   const [count, setCount] = useState(1);
   const [commentList, setCommentList] = useState([]);
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     getData();
     getComment();
   }, []);
@@ -89,6 +90,7 @@ export default function ProductDetail() {
       bookName: data.name,
       comment: comment,
       vote: rating,
+      khachHangId: parseInt(userId),
     };
     commentService.createComment(dataComment).then((res) => {
       setRating(0);
@@ -99,6 +101,33 @@ export default function ProductDetail() {
   const handleMoreComment = () => {
     setMoreComment(moreComment + 3);
   };
+   async function handleUpdateComent(commentData){
+    const { value: text } = await Swal.fire({
+      input: 'text',
+      inputLabel: 'Comment',
+      inputPlaceholder: 'your comment',
+      showCancelButton: true
+    }) 
+    if (text) {
+      var dataComment = {
+        id: commentData.id,
+        bookId: commentData.bookId,
+        bookName: commentData.name,
+        comment: text,
+        vote: commentData.vote,
+        khachHangId: parseInt(userId),
+      };
+      console.log(dataComment)
+      commentService.updateComment(dataComment).then((res) => {
+        getComment();
+      });
+    }
+  }
+  function handleDelete(item){
+      commentService.deleteComment(item.id).then((res)=>{
+        getComment()
+      })
+  }
   return (
     <div>
       <div className="product-detail-page">
@@ -240,11 +269,24 @@ export default function ProductDetail() {
                     <div className="c-comment-box__content col-span-12 md:col-span-10 lg:col-span-11">
                       <p className="font-18 m-0">
                         Người dùng
-                        <span className="font-14 text-g200 ml-2">{`${Math.floor(Math.random() * 60) + 1} phút trước`}</span>
+                        <span className="font-14 text-g200 ml-2">{`${
+                          Math.floor(Math.random() * 60) + 1
+                        } phút trước`}</span>
                       </p>
                       <Rate rating={item.vote} disabled={true} />
-                      <p className="font-16 text-g100 m-0">{item.comment}</p>
+                      <p className="font-16 text-g100 m-0">
+                        {item.comment}
+                      </p>
                     </div>
+                    {item.khachHangId == userId && (
+                      <>
+                        <div className="d-flex justify-content-begin align-items-center font-16">
+                          <p className="mx-2 text-info cursor-pointer" onClick={()=>{handleUpdateComent(item)}}>Edit</p>
+                          <p className="mx-2 text-info cursor-pointer" onClick={()=> handleDelete(item)}>Delete</p>
+                      
+                        </div>
+                      </>
+                    )}
                   </div>
                 )
               );
@@ -262,3 +304,5 @@ export default function ProductDetail() {
     </div>
   );
 }
+
+

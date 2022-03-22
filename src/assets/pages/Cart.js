@@ -69,9 +69,11 @@ export default function Cart() {
         Swal.fire("Success!", `Order Success`, "success").then((response) => {
           localStorage.removeItem("cart");
           localStorage.removeItem("count");
+          setCode("")
           for (const key in product) {
             removeItem(product[key].product.id);
           }
+          history.push('/my-order')
         });
       } else {
         Swal.fire("Fail", "Order Fail", "error");
@@ -124,7 +126,7 @@ export default function Cart() {
   function handleCheckCode() {
     var discount = {};
     for (const key in promotionList) {
-      if (promotionList[key].code == code) {
+      if (promotionList[key].code == code && promotionList[key].status == "success") {
         discount = promotionList[key];
       }
     }
