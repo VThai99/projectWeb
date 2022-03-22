@@ -60,8 +60,8 @@ export default function Cart() {
             ? discountPercent.promotionPercent
             : 0) / 100
         ),
-      createdAt: "2022-03-11T14:52:11.671Z",
-      status: "string",
+      createdAt: new Date().toISOString(),
+      status: "pending",
       listBook: listBookArray,
     };
     cart.createOrder(dataOrder).then((res) => {

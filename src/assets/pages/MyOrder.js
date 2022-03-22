@@ -8,6 +8,7 @@ import { ProductDetailService } from "../../services/ProductDetailService";
 export default function MyOrder() {
   const userId = localStorage.getItem("user_id");
   const [orderList, setOrderList] = useState([]);
+  const [limit, setLimit] = useState(4);
   useEffect(() => {
     getOrder();
   }, []);
@@ -28,81 +29,80 @@ export default function MyOrder() {
 
           {orderList.map((item, index) => {
             return (
-              <div className="border-b-4 mt-4  pb-2" key={index}>
-                {item.listBook?.map((itemBook, idxBook) => {
-                  return (
-                    <div className="row my-2" key={idxBook}>
-                      <div className="col-5 ">
-                        <Image
-                          src= "aa"
-                          alt="image"
-                          className="ct-image-order"
-                        />
-                      </div>
-                      <div className="col-7">
-                        <div className="row mt-4 ml-2">
-                          <div className="font-23">
-                            <b>
-                              Tên sách : 
-                             
-                            </b>
-                          </div>
+              index < limit && (
+                <div className="border-b-4 mt-4  pb-2" key={index}>
+                  {item.listBook?.map((itemBook, idxBook) => {
+                    return (
+                      <div className="row my-2" key={idxBook}>
+                        <div className="col-5 ">
+                          <Image
+                            src={itemBook.imageLink}
+                            alt="image"
+                            className="ct-image-order"
+                          />
                         </div>
-                        <div className="row mt-2 ml-2">
-                          <div className="font-20">
-                            Tác giả : 
-                          </div>
-                        </div>
-                        -----------------------------
-                        <div className="row mt-2   ml-2">
-                          <div className="col-5 pl-0">
-                            <div className="font-15 text-r300 ">
-                              Giá :{itemBook.basePrice} đ
+                        <div className="col-7">
+                          <div className="row mt-4 ml-2">
+                            <div className="font-23">
+                              <b>Tên sách : {itemBook.bookName}</b>
                             </div>
                           </div>
-                          <div className="col-7">
-                            <div className="font-15 text-r300 ">
-                              Số lượng : {itemBook.quantity}
+                          <div className="row mt-2 ml-2">
+                            <div className="font-20">
+                              Tác giả : {itemBook.authorName[0]?.name}
                             </div>
                           </div>
-                        </div>
-                        <div className="row">
-                          <div className="col-7"> ------------------- </div>
-                          <div className="col-5 ct-add-order text-center">
-                            {" "}
-                            <Link to={`/product-detail/${22}`}>Mua thêm</Link>
+                          -----------------------------
+                          <div className="row mt-2   ml-2">
+                            <div className="col-5 pl-0">
+                              <div className="font-15 text-r300 ">
+                                Giá :{itemBook.basePrice} đ
+                              </div>
+                            </div>
+                            <div className="col-7">
+                              <div className="font-15 text-r300 ">
+                                Số lượng : {itemBook.quantity}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-7"> ------------------- </div>
+                            <div className="col-5 ct-add-order text-center">
+                              {" "}
+                              <Link to={`/product-detail/${22}`}>Mua thêm</Link>
+                            </div>
+                          </div>
+                          <div className="row mt-3 ml-2">
+                            <div className="font-20 text-r300 "></div>
                           </div>
                         </div>
-                        <div className="row mt-3 ml-2">
-                          <div className="font-20 text-r300 "></div>
-                        </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
 
-                <div className="mt-2">
-                  <div className="row mt-3 ml-2">
-                    <div className="font-20 text-r300 ">
-                      Thanh tien: {item.totalPrice}
+                  <div className="mt-2">
+                    <div className="row mt-3 ml-2">
+                      <div className="font-20 text-r300 ">
+                        Thanh tien: {item.totalPrice}
+                      </div>
                     </div>
-                  </div>
-                  <div className="row mt-2 ml-2">
-                    <div className="font-15">
-                      Tình trạng :{" "}
-                      <span className="ct-order-completed px-2">
-                        {item.status}
-                      </span>{" "}
+                    <div className="row mt-2 ml-2">
+                      <div className="font-15">
+                        Tình trạng :{" "}
+                        <span className="ct-order-completed px-2">
+                          {item.status}
+                        </span>{" "}
+                      </div>
                     </div>
-                  </div>
-                  <div className="row mt-2 ml-2">
-                    <div className="font-15">
-                      Ngày đặt :{" "}
-                      {new Date(item.createdAt).toISOString().slice(0, 10)}
+                    <div className="row mt-2 ml-2">
+                      <div className="font-15">
+                        Ngày đặt :{" "}
+                        {new Date(item.createdAt).toISOString().slice(0, 10)}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )
             );
           })}
         </div>
@@ -110,7 +110,7 @@ export default function MyOrder() {
           <Button
             className="form-control w-25 mb-4"
             variant="info"
-            //   onClick={() => setLimit(limit + 8)}
+            onClick={() => setLimit(limit + 4)}
           >
             Xem thêm
           </Button>
