@@ -18,6 +18,7 @@ import { useDispatch } from "react-redux";
 import Rate from "../components/Rate/Rate";
 import { commentService } from "../../services/commentService";
 import UserImage from "../Images/user.jpg";
+import { customer } from "../../services/customer";
 
 export default function ProductDetail() {
   const [rating, setRating] = useState(0);
@@ -32,12 +33,14 @@ export default function ProductDetail() {
   };
   const [data, setData] = useState([]);
   const [athur, setathur] = useState();
+  const [customerList, setCustomer] = useState([]);
   const [count, setCount] = useState(1);
   const [commentList, setCommentList] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);
     getData();
     getComment();
+    getCustomer();
   }, []);
   function getData() {
     ProductDetailService.getDetail(id).then((response) => {
@@ -101,13 +104,13 @@ export default function ProductDetail() {
   const handleMoreComment = () => {
     setMoreComment(moreComment + 3);
   };
-   async function handleUpdateComent(commentData){
+  async function handleUpdateComent(commentData) {
     const { value: text } = await Swal.fire({
-      input: 'text',
-      inputLabel: 'Comment',
-      inputPlaceholder: 'your comment',
-      showCancelButton: true
-    }) 
+      input: "text",
+      inputLabel: "Comment",
+      inputPlaceholder: "your comment",
+      showCancelButton: true,
+    });
     if (text) {
       var dataComment = {
         id: commentData.id,
@@ -117,16 +120,21 @@ export default function ProductDetail() {
         vote: commentData.vote,
         khachHangId: parseInt(userId),
       };
-      console.log(dataComment)
+      console.log(dataComment);
       commentService.updateComment(dataComment).then((res) => {
         getComment();
       });
     }
   }
-  function handleDelete(item){
-      commentService.deleteComment(item.id).then((res)=>{
-        getComment()
-      })
+  function handleDelete(item) {
+    commentService.deleteComment(item.id).then((res) => {
+      getComment();
+    });
+  }
+  function getCustomer() {
+    customer.getlist().then((res) => {
+      setCustomer(res.data);
+    });
   }
   return (
     <div>
@@ -268,22 +276,33 @@ export default function ProductDetail() {
                     </div>
                     <div className="c-comment-box__content col-span-12 md:col-span-10 lg:col-span-11">
                       <p className="font-18 m-0">
-                        Người dùng
+                        {item.khachHangId
+                          ? customerList?.find(x => x.id == 12)?.name
+                          : "Ẩn danh"}
                         <span className="font-14 text-g200 ml-2">{`${
                           Math.floor(Math.random() * 60) + 1
                         } phút trước`}</span>
                       </p>
                       <Rate rating={item.vote} disabled={true} />
-                      <p className="font-16 text-g100 m-0">
-                        {item.comment}
-                      </p>
+                      <p className="font-16 text-g100 m-0">{item.comment}</p>
                     </div>
                     {item.khachHangId == userId && (
                       <>
                         <div className="d-flex justify-content-begin align-items-center font-16">
-                          <p className="mx-2 text-info cursor-pointer" onClick={()=>{handleUpdateComent(item)}}>Edit</p>
-                          <p className="mx-2 text-info cursor-pointer" onClick={()=> handleDelete(item)}>Delete</p>
-                      
+                          <p
+                            className="mx-2 text-info cursor-pointer"
+                            onClick={() => {
+                              handleUpdateComent(item);
+                            }}
+                          >
+                            Edit
+                          </p>
+                          <p
+                            className="mx-2 text-info cursor-pointer"
+                            onClick={() => handleDelete(item)}
+                          >
+                            Delete
+                          </p>
                         </div>
                       </>
                     )}
@@ -304,5 +323,3 @@ export default function ProductDetail() {
     </div>
   );
 }
-
-

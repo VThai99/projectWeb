@@ -6,7 +6,11 @@ const getlist = () => {
 const update = (data) => {
   return API.post(`${BASE_URL}/UpdateCustomer`,data);
 };
+const getDetail = (id) => {
+  return API.post(`${BASE_URL}/GetDetailCustomer?id=${id}`)
+}
 export const customer = {
   getlist,
   update,
+  getDetail
 };
